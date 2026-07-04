@@ -8,5 +8,7 @@
 4. Conferir testes e evidências.
 5. Verificar documentação e rastreabilidade.
 6. Classificar achados por impacto e apontar localização.
+7. Confirmar build/testes aplicáveis ou justificativa objetiva.
+8. Confirmar documentos avaliados, alterações necessárias e ausência de links órfãos.
 
 Ausência de achados não equivale a prova de correção.

@@ -8,3 +8,5 @@
 4. Corrigir links e remover instruções obsoletas.
 5. Registrar versão quando o contrato público mudou.
 6. Conferir que documentação e sistema descrevem o mesmo estado.
+
+Na entrega, separe documentos avaliados dos efetivamente alterados. Não produza alterações artificiais para aparentar cobertura documental.

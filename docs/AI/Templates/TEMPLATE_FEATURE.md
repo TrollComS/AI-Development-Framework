@@ -1,7 +1,17 @@
 # Feature: <nome>
 
-**Estado:** Rascunho  
+**Estado:** Rascunho
+
 **Responsável:** <nome ou equipe>
+
+**Papel recomendado:** <papel>
+
+**Skill recomendada:** <link>
+
+## Contexto obrigatório
+
+- [Índice principal](../../INDICE_DOCUMENTACAO.md)
+- <arquitetura, regras e padrões relacionados>
 
 ## Problema
 
@@ -41,3 +51,11 @@
 ## Evidências
 
 <testes, comandos ou links>
+
+## Checklist de conclusão
+
+- [ ] Escopo entregue e fora de escopo preservado.
+- [ ] Build e testes aplicáveis executados ou impedimentos justificados.
+- [ ] Segurança, compatibilidade e regressões avaliadas.
+- [ ] Documentação impactada avaliada e atualizada quando necessário.
+- [ ] Arquivos, validações, documentos e pendências reportados.
