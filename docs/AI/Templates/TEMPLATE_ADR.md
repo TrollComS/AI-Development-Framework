@@ -1,7 +1,9 @@
 # ADR-NNN: <decisão>
 
-**Estado:** Proposta  
-**Data:** AAAA-MM-DD  
+**Estado:** Proposta | Aceita | Substituída | Cancelada
+
+**Data:** AAAA-MM-DD
+
 **Responsáveis:** <nomes>
 
 ## Contexto
@@ -26,3 +28,8 @@
 ## Validação e revisão
 
 <como validar e quando reconsiderar>
+
+## Referências
+
+- Decisões relacionadas: <links>
+- Features: <links>

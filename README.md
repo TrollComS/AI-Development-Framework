@@ -19,11 +19,13 @@ O ADF organiza o trabalho conjunto entre pessoas e IAs no ciclo de desenvolvimen
 | `docs/AI/Skills` | Procedimentos reutilizáveis |
 | `docs/AI/Templates` | Modelos de artefatos |
 | `docs/AI/Prompts` | Prompts reutilizáveis |
+| `docs/INDICE_DOCUMENTACAO.md` | Ponto único de entrada e leitura mínima por tarefa |
 | `docs/Arquitetura` | Visão e decisões arquiteturais |
 | `docs/Padroes` | Convenções técnicas e de processo |
 | `docs/Projeto` | Visão e glossário do projeto |
 | `docs/RegrasNegocio` | Regras do domínio consumidor |
 | `docs/Features` | Especificações das entregas |
+| `docs/Revisoes` | Pareceres preservados quando necessários |
 | `docs/Samples` | Exemplos preenchidos |
 | `Installer` | Instalação e adoção |
 
@@ -36,6 +38,6 @@ O ADF organiza o trabalho conjunto entre pessoas e IAs no ciclo de desenvolvimen
 
 ## Uso
 
-Oriente-se pelo [índice](docs/AI/Core/INDICE_DOCUMENTACAO.md), especifique a feature, carregue somente o contexto relacionado, planeje, implemente, valide e atualize os artefatos afetados. O fluxo completo está em [FLUXO_DESENVOLVIMENTO.md](docs/AI/Core/FLUXO_DESENVOLVIMENTO.md).
+Comece sempre pelo [índice único](docs/INDICE_DOCUMENTACAO.md). Selecione papel e skill, carregue somente o contexto relacionado, implemente, revise, valide e avalie a documentação afetada. O fluxo completo está em [FLUXO_DESENVOLVIMENTO.md](docs/AI/Core/FLUXO_DESENVOLVIMENTO.md).
 
 Distribuído sob licença MIT. Versão em [ADF_VERSION.md](ADF_VERSION.md).
