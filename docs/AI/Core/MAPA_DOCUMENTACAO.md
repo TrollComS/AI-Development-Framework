@@ -23,6 +23,7 @@ Consulte também o [guia de organização](GUIA_ORGANIZACAO_DOCUMENTACAO.md).
 - [Contrato](ADF_FRAMEWORK.md)
 - [Fluxo](FLUXO_DESENVOLVIMENTO.md)
 - [Papéis](PAPEIS_DAS_IAS.md)
+- [Roteamento de IAs](ROTEAMENTO_IAS.md)
 - [Checklist](CHECKLIST_USO_ADF.md)
 - [Mapa de skills](MAPA_SKILLS.md)
 - [Índice legado](INDICE_DOCUMENTACAO.md)
@@ -48,6 +49,8 @@ Consulte também o [guia de organização](GUIA_ORGANIZACAO_DOCUMENTACAO.md).
 ### Áreas do projeto consumidor
 
 - [Projeto](../../Projeto/README.md)
+- [Adoção do ADF no projeto](../../Projeto/ADF_ADOCAO.md)
+- [Configuração de IAs do projeto](../../Projeto/CONFIGURACAO_IAS.md)
 - [Arquitetura](../../Arquitetura/README.md)
 - [Padrões](../../Padroes/README.md)
 - [Regras de negócio](../../RegrasNegocio/README.md)

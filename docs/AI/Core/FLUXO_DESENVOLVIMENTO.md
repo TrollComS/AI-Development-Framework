@@ -1,6 +1,6 @@
 # Fluxo de desenvolvimento
 
-1. **Orientar:** iniciar no índice, escolher papel e skill e carregar contexto mínimo.
+1. **Orientar:** iniciar no índice, consultar configuração de IAs, escolher papel, rota e skill e carregar contexto mínimo.
 2. **Especificar:** registrar problema, escopo, requisitos, riscos e aceite.
 3. **Planejar:** dividir em incrementos e definir testes, compatibilidade e reversão.
 4. **Implementar:** alterar o menor conjunto coerente de artefatos.

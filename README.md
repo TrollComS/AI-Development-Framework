@@ -47,10 +47,11 @@ Os principais benefícios são:
 | ADR | Registro de uma decisão arquitetural durável, incluindo alternativas e consequências. |
 | Prompt | Instrução curta para iniciar uma execução ou revisão usando o contexto do ADF. |
 | Template | Estrutura vazia e padronizada para criar um novo artefato. |
+| Roteamento de IAs | Regra que define se uma tarefa fica com a IA Pensante, com a IA Dev Principal ou com o OpenCode. |
 
 ### Fluxo de trabalho
 
-1. **Orientar:** começar no [índice principal](docs/INDICE_DOCUMENTACAO.md), escolher papel e skill e carregar apenas o contexto relacionado.
+1. **Orientar:** começar no [índice principal](docs/INDICE_DOCUMENTACAO.md), consultar a configuração de IAs, escolher papel, rota e skill e carregar apenas o contexto relacionado.
 2. **Especificar:** registrar problema, escopo, requisitos, riscos e critérios de aceite.
 3. **Planejar:** dividir a mudança em incrementos e definir testes, compatibilidade e reversão.
 4. **Implementar:** alterar o menor conjunto coerente de arquivos.
@@ -65,12 +66,36 @@ Uma feature não está concluída somente porque o código compila. Revisão, va
 
 Para adotar o ADF em outro projeto, siga esta ordem:
 
-1. [Instalar o ADF](Installer/FEATURE_INSTALAR_ADF.md): copiar a estrutura base e registrar a versão instalada.
-2. [Adaptar ao projeto](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): definir responsáveis, convenções e extensões necessárias sem alterar silenciosamente o Core.
-3. [Popular a documentação](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): registrar visão, glossário, arquitetura, padrões e regras existentes.
-4. [Implantar o fluxo](Installer/FEATURE_IMPLANTAR_ADF.md): validar links, testar uma feature piloto e incorporar o processo ao trabalho da equipe.
+1. **Preparar decisões locais:** antes de considerar o ADF pronto para uso, defina quais IAs serão usadas, quais modelos gratuitos existem no OpenCode, quem mantém a documentação e quais arquivos precisam ser preenchidos no projeto consumidor.
+2. [Instalar o ADF](Installer/FEATURE_INSTALAR_ADF.md): copiar a estrutura base e registrar a versão instalada.
+3. [Adaptar ao projeto](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): definir responsáveis, convenções, roteamento de IAs e extensões necessárias sem alterar silenciosamente o Core.
+4. [Popular a documentação](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): registrar visão, glossário, arquitetura, padrões e regras existentes.
+5. [Implantar o fluxo](Installer/FEATURE_IMPLANTAR_ADF.md): validar links, testar uma feature piloto e incorporar o processo ao trabalho da equipe.
 
 Depois da instalação, toda tarefa deve começar em [`docs/INDICE_DOCUMENTACAO.md`](docs/INDICE_DOCUMENTACAO.md). Não é necessário ler toda a documentação: o índice indica a leitura mínima por papel e tipo de tarefa.
+
+### O que configurar antes da primeira feature
+
+O ADF instala o esqueleto, mas cada projeto consumidor precisa preencher decisões locais antes de usar o fluxo com segurança.
+
+| Arquivo | O que preencher | Por que importa |
+|---|---|---|
+| [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) | IA Pensante principal, IA Dev Principal, exigência do OpenCode, modelos gratuitos disponíveis, melhor uso de cada modelo e rota alternativa. | Permite que a IA Pensante saiba quando executar, quando delegar para código pesado e quando usar OpenCode sem depender de suposição. |
+| [`docs/Projeto/ADF_ADOCAO.md`](docs/Projeto/ADF_ADOCAO.md) | Responsável pelo ADF, cadência de revisão, desvios aceitos, ferramentas usadas e decisões locais de adoção. | Registra como o framework foi adaptado ao projeto sem modificar o Core. |
+| [`docs/Projeto/README.md`](docs/Projeto/README.md) | Visão, escopo, glossário, stakeholders e estado do projeto consumidor. | Dá contexto de produto para a IA entender intenção e limites. |
+| [`docs/Arquitetura/README.md`](docs/Arquitetura/README.md) | Componentes, integrações, decisões, riscos técnicos e atributos de qualidade. | Ajuda a decidir se uma mudança é simples, estrutural ou deve ir para a IA Dev Principal. |
+| [`docs/Padroes/README.md`](docs/Padroes/README.md) | Convenções de código, testes, layout, commits, revisão e organização. | Mantém as entregas consistentes entre pessoas, IA Dev Principal e OpenCode. |
+| [`docs/RegrasNegocio/README.md`](docs/RegrasNegocio/README.md) | Regras e invariantes do domínio. | Evita que a IA altere comportamento de negócio por falta de contexto. |
+
+### Melhoria de roteamento de IAs
+
+A versão atual adiciona uma camada explícita para separar papel, ferramenta e rota de execução:
+
+- [`docs/AI/Core/ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) define a regra geral para escolher entre IA Pensante, IA Dev Principal e OpenCode.
+- [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) é preenchido pelo usuário em cada projeto com as ferramentas reais e os modelos gratuitos do OpenCode.
+- A IA Pensante deve ler essa configuração antes de planejar uma feature e declarar a rota escolhida.
+- O OpenCode deve ser usado apenas com modelos gratuitos declarados pelo usuário.
+- Mudanças grandes, estruturais, sensíveis ou de alto risco devem ir para a IA Dev Principal.
 
 ### Estrutura do repositório
 
@@ -93,7 +118,7 @@ Depois da instalação, toda tarefa deve começar em [`docs/INDICE_DOCUMENTACAO.
 | [`docs/AI/Skills`](docs/AI/Core/MAPA_SKILLS.md) | Procedimentos reutilizáveis para analisar, especificar, implementar, revisar e documentar mudanças. |
 | [`docs/AI/Templates`](docs/AI/Core/MAPA_DOCUMENTACAO.md) | Modelos para criar features, ADRs, planos, regras, revisões, prompts e checklists consistentes. |
 | [`docs/AI/Prompts`](docs/AI/Prompts/PROMPT_INICIAR_FEATURE.md) | Instruções curtas para iniciar uma feature ou uma revisão usando o processo ADF. |
-| [`docs/Projeto`](docs/Projeto/README.md) | Propósito, escopo, glossário, stakeholders, estado e histórico do projeto consumidor. |
+| [`docs/Projeto`](docs/Projeto/README.md) | Propósito, escopo, glossário, stakeholders, configuração de IAs, estado e histórico do projeto consumidor. |
 | [`docs/Arquitetura`](docs/Arquitetura/README.md) | Contexto técnico, componentes, integrações, atributos de qualidade e decisões arquiteturais. |
 | [`docs/Padroes`](docs/Padroes/README.md) | Convenções técnicas, visuais e de processo que devem ser repetidas e verificadas. |
 | [`docs/RegrasNegocio`](docs/RegrasNegocio/README.md) | Regras e invariantes do domínio, separados de detalhes de implementação. |
@@ -108,6 +133,7 @@ Depois da instalação, toda tarefa deve começar em [`docs/INDICE_DOCUMENTACAO.
 | [`ADF_FRAMEWORK.md`](docs/AI/Core/ADF_FRAMEWORK.md) | Contrato essencial: propósito, regras, limites e adoção mínima do framework. |
 | [`FLUXO_DESENVOLVIMENTO.md`](docs/AI/Core/FLUXO_DESENVOLVIMENTO.md) | Sequência oficial desde a orientação inicial até a conclusão documentada. |
 | [`PAPEIS_DAS_IAS.md`](docs/AI/Core/PAPEIS_DAS_IAS.md) | Responsabilidades e limites das IAs Analista, Arquiteta, Executora, Revisora e Curadora. |
+| [`ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) | Critérios para escolher IA Pensante, IA Dev Principal ou OpenCode conforme risco e tipo de tarefa. |
 | [`GUIA_ORGANIZACAO_DOCUMENTACAO.md`](docs/AI/Core/GUIA_ORGANIZACAO_DOCUMENTACAO.md) | Define onde cada informação deve ficar e como evitar duplicidade e documentos gigantes. |
 | [`CHECKLIST_USO_ADF.md`](docs/AI/Core/CHECKLIST_USO_ADF.md) | Verificação compacta para confirmar que contexto, escopo, testes e documentação foram tratados. |
 | [`MAPA_DOCUMENTACAO.md`](docs/AI/Core/MAPA_DOCUMENTACAO.md) | Catálogo dos documentos e explicação das relações entre visão, regras, arquitetura, features e código. |
@@ -205,10 +231,11 @@ Key benefits include:
 | ADR | Durable architectural decision record, including alternatives and consequences. |
 | Prompt | Short instruction used to start execution or review with ADF context. |
 | Template | Standard empty structure used to create a new artifact. |
+| AI routing | Rule that defines whether a task stays with the Thinking AI, goes to the Main Dev AI, or uses OpenCode. |
 
 ### Workflow
 
-1. **Orient:** start from the [main index](docs/INDICE_DOCUMENTACAO.md), select the role and skill, and load only related context.
+1. **Orient:** start from the [main index](docs/INDICE_DOCUMENTACAO.md), read the AI configuration, select the role, route, and skill, and load only related context.
 2. **Specify:** document the problem, scope, requirements, risks, and acceptance criteria.
 3. **Plan:** split the change into increments and define tests, compatibility, and rollback.
 4. **Implement:** change the smallest coherent set of files.
@@ -223,12 +250,36 @@ A feature is not complete merely because the code compiles. Review, applicable v
 
 Adopt ADF in this order:
 
-1. [Install ADF](Installer/FEATURE_INSTALAR_ADF.md): copy the base structure and record the installed version.
-2. [Adapt it to the project](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): define ownership, conventions, and required extensions without silently modifying Core.
-3. [Populate documentation](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): record the existing vision, glossary, architecture, standards, and rules.
-4. [Deploy the workflow](Installer/FEATURE_IMPLANTAR_ADF.md): validate links, run a pilot feature, and incorporate the process into team practices.
+1. **Prepare local decisions:** before treating ADF as ready for use, define which AIs will be used, which free OpenCode models are available, who maintains the documentation, and which files must be filled in the adopting project.
+2. [Install ADF](Installer/FEATURE_INSTALAR_ADF.md): copy the base structure and record the installed version.
+3. [Adapt it to the project](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): define ownership, conventions, AI routing, and required extensions without silently modifying Core.
+4. [Populate documentation](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): record the existing vision, glossary, architecture, standards, and rules.
+5. [Deploy the workflow](Installer/FEATURE_IMPLANTAR_ADF.md): validate links, run a pilot feature, and incorporate the process into team practices.
 
 After installation, every task starts at [`docs/INDICE_DOCUMENTACAO.md`](docs/INDICE_DOCUMENTACAO.md). Reading the entire documentation set is unnecessary; the index identifies the minimum context for each role and task.
+
+### What to configure before the first feature
+
+ADF installs the skeleton, but each adopting project must fill local decisions before using the workflow safely.
+
+| File | What to fill in | Why it matters |
+|---|---|---|
+| [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) | Main Thinking AI, Main Dev AI, OpenCode requirement, available free models, best use for each model, and fallback route. | Allows the Thinking AI to know when to execute, when to delegate heavy code, and when to use OpenCode without guessing. |
+| [`docs/Projeto/ADF_ADOCAO.md`](docs/Projeto/ADF_ADOCAO.md) | ADF owner, review cadence, accepted deviations, tools used, and local adoption decisions. | Records how the framework was adapted to the project without modifying Core. |
+| [`docs/Projeto/README.md`](docs/Projeto/README.md) | Vision, scope, glossary, stakeholders, and adopting project status. | Gives product context so the AI understands intent and boundaries. |
+| [`docs/Arquitetura/README.md`](docs/Arquitetura/README.md) | Components, integrations, decisions, technical risks, and quality attributes. | Helps decide whether a change is simple, structural, or should go to the Main Dev AI. |
+| [`docs/Padroes/README.md`](docs/Padroes/README.md) | Code, test, layout, commit, review, and organization conventions. | Keeps deliveries consistent across people, Main Dev AI, and OpenCode. |
+| [`docs/RegrasNegocio/README.md`](docs/RegrasNegocio/README.md) | Domain rules and invariants. | Prevents the AI from changing business behavior due to missing context. |
+
+### AI routing improvement
+
+The current version adds an explicit layer for separating role, tool, and execution route:
+
+- [`docs/AI/Core/ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) defines the general rule for choosing between Thinking AI, Main Dev AI, and OpenCode.
+- [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) is filled by the user in each project with real tools and free OpenCode models.
+- The Thinking AI must read this configuration before planning a feature and declare the chosen route.
+- OpenCode must be used only with free models declared by the user.
+- Large, structural, sensitive, or high-risk changes should go to the Main Dev AI.
 
 ### Repository structure
 
@@ -251,7 +302,7 @@ After installation, every task starts at [`docs/INDICE_DOCUMENTACAO.md`](docs/IN
 | [`docs/AI/Skills`](docs/AI/Core/MAPA_SKILLS.md) | Reusable procedures for analyzing, specifying, implementing, reviewing, and documenting changes. |
 | [`docs/AI/Templates`](docs/AI/Core/MAPA_DOCUMENTACAO.md) | Models for consistent features, ADRs, plans, rules, reviews, prompts, and checklists. |
 | [`docs/AI/Prompts`](docs/AI/Prompts/PROMPT_INICIAR_FEATURE.md) | Short instructions for starting a feature or review with the ADF process. |
-| [`docs/Projeto`](docs/Projeto/README.md) | Adopting project's purpose, scope, glossary, stakeholders, status, and history. |
+| [`docs/Projeto`](docs/Projeto/README.md) | Adopting project's purpose, scope, glossary, stakeholders, AI configuration, status, and history. |
 | [`docs/Arquitetura`](docs/Arquitetura/README.md) | Technical context, components, integrations, quality attributes, and architectural decisions. |
 | [`docs/Padroes`](docs/Padroes/README.md) | Recurring and verifiable technical, visual, and process conventions. |
 | [`docs/RegrasNegocio`](docs/RegrasNegocio/README.md) | Domain rules and invariants kept separate from implementation details. |
@@ -266,6 +317,7 @@ After installation, every task starts at [`docs/INDICE_DOCUMENTACAO.md`](docs/IN
 | [`ADF_FRAMEWORK.md`](docs/AI/Core/ADF_FRAMEWORK.md) | Essential contract covering purpose, rules, boundaries, and minimum adoption. |
 | [`FLUXO_DESENVOLVIMENTO.md`](docs/AI/Core/FLUXO_DESENVOLVIMENTO.md) | Official sequence from initial orientation through documented completion. |
 | [`PAPEIS_DAS_IAS.md`](docs/AI/Core/PAPEIS_DAS_IAS.md) | Responsibilities and boundaries for Analyst, Architect, Executor, Reviewer, and Curator roles. |
+| [`ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) | Criteria for choosing Thinking AI, Main Dev AI, or OpenCode based on risk and task type. |
 | [`GUIA_ORGANIZACAO_DOCUMENTACAO.md`](docs/AI/Core/GUIA_ORGANIZACAO_DOCUMENTACAO.md) | Defines information ownership and prevents duplication and oversized documents. |
 | [`CHECKLIST_USO_ADF.md`](docs/AI/Core/CHECKLIST_USO_ADF.md) | Compact check ensuring context, scope, tests, and documentation were addressed. |
 | [`MAPA_DOCUMENTACAO.md`](docs/AI/Core/MAPA_DOCUMENTACAO.md) | Document catalog and relationship map across vision, rules, architecture, features, and code. |

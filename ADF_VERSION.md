@@ -1,6 +1,6 @@
 # Versão do ADF
 
-**Versão:** 1.1.0
+**Versão:** 1.2.0
 
 **Esquema:** Semantic Versioning 2.0.0
 
@@ -9,6 +9,10 @@
 - **PATCH:** correção compatível.
 
 O projeto consumidor deve registrar a versão instalada e suas adaptações.
+
+## Compatibilidade da versão 1.2
+
+A versão 1.2 adiciona roteamento de IAs e configuração local em `docs/Projeto/CONFIGURACAO_IAS.md`. Projetos existentes podem adotar essa capacidade preenchendo o novo arquivo e consultando `docs/AI/Core/ROTEAMENTO_IAS.md`; não há movimentação de diretórios nem quebra dos caminhos da versão 1.1.
 
 ## Compatibilidade da versão 1.1
 

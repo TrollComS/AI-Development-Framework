@@ -2,6 +2,8 @@
 
 Este é o ponto único de entrada do ADF. Comece aqui e carregue somente os documentos necessários à tarefa. Os mapas são catálogos, não roteiros de leitura.
 
+Antes de planejar ou executar uma mudança, consulte `docs/Projeto/CONFIGURACAO_IAS.md` e aplique o [Roteamento de IAs](AI/Core/ROTEAMENTO_IAS.md).
+
 ## Leitura mínima por papel
 
 ### IA Arquiteta
@@ -46,6 +48,7 @@ Este é o ponto único de entrada do ADF. Comece aqui e carregue somente os docu
 - [Contrato do ADF](AI/Core/ADF_FRAMEWORK.md)
 - [Fluxo de desenvolvimento](AI/Core/FLUXO_DESENVOLVIMENTO.md)
 - [Papéis das IAs](AI/Core/PAPEIS_DAS_IAS.md)
+- [Roteamento de IAs](AI/Core/ROTEAMENTO_IAS.md)
 - [Guia de organização](AI/Core/GUIA_ORGANIZACAO_DOCUMENTACAO.md)
 - [Checklist de uso](AI/Core/CHECKLIST_USO_ADF.md)
 - [Catálogo documental](AI/Core/MAPA_DOCUMENTACAO.md)
@@ -53,7 +56,9 @@ Este é o ponto único de entrada do ADF. Comece aqui e carregue somente os docu
 
 ## Documentação do projeto consumidor
 
-- `Projeto`: visão, glossário, status, roadmap e histórico.
+- `Projeto`: visão, glossário, status, roadmap, configuração de IAs e histórico.
+- `Projeto/ADF_ADOCAO.md`: responsáveis, cadência, convenções locais, adaptações aceitas e pendências de implantação.
+- `Projeto/CONFIGURACAO_IAS.md`: IA Pensante, IA Dev Principal, OpenCode, modelos gratuitos e matriz de roteamento.
 - `Arquitetura`: contexto, componentes, integrações e ADRs.
 - `Padroes`: convenções técnicas e de processo.
 - `RegrasNegocio`: invariantes do domínio.

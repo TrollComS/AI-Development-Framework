@@ -8,6 +8,10 @@
 
 Papéis podem ser exercidos pela mesma ferramenta em momentos distintos, mas suas responsabilidades e checkpoints permanecem separados.
 
+## Ferramentas e roteamento
+
+Papéis não são a mesma coisa que ferramentas. A escolha entre IA Pensante, IA Dev Principal e OpenCode deve seguir [Roteamento de IAs](ROTEAMENTO_IAS.md) e a configuração do projeto consumidor em `docs/Projeto/CONFIGURACAO_IAS.md`.
+
 ## Limites
 
 Não fabricar requisitos, testes ou aprovações; não expor dados sensíveis; não ampliar materialmente o escopo; não publicar ou excluir sem autorização; declarar incerteza sem evidência suficiente.

@@ -1,5 +1,25 @@
 # Changelog do ADF
 
+## 1.2.0 — 2026-07-14
+
+### Criados
+
+- `docs/AI/Core/ROTEAMENTO_IAS.md`: contrato para decidir entre IA Pensante, IA Dev Principal e OpenCode.
+- `docs/Projeto/CONFIGURACAO_IAS.md`: configuração local para definir ferramentas, modelos gratuitos do OpenCode, rotas alternativas e matriz de roteamento.
+- `docs/Projeto/ADF_ADOCAO.md`: template para registrar responsáveis, cadência, adaptações aceitas e pendências locais.
+
+### Alterados
+
+- README: adicionada explicação das melhorias e dos arquivos que o usuário deve preencher antes de considerar o ADF pronto no projeto consumidor.
+- Índice, mapa documental, papéis, fluxo, checklist, prompt de início, template de execução e adaptação do ADF: agora apontam para a configuração de IAs e exigem definição da rota de execução.
+- Versão do ADF: atualizada para `1.2.0` como capacidade compatível nova.
+
+### Benefícios
+
+- A IA Pensante passa a ter uma fonte canônica para decidir quando executar, quando delegar para IA Dev Principal e quando usar OpenCode.
+- Cada projeto consumidor pode declarar seus próprios modelos gratuitos do OpenCode sem alterar o Core.
+- A instalação fica mais clara para novos usuários, com decisões obrigatórias antes da primeira feature.
+
 ## 1.1.0 — 2026-07-04
 
 ### Criados

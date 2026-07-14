@@ -3,6 +3,7 @@
 - [ ] O índice principal foi consultado.
 - [ ] Objetivo, escopo e conclusão estão claros.
 - [ ] Papel e skill adequados foram escolhidos.
+- [ ] Configuração de IAs foi consultada e a rota de execução foi definida.
 - [ ] Somente o contexto relacionado foi carregado.
 - [ ] Critérios de aceite são verificáveis.
 - [ ] Mudanças locais não relacionadas foram preservadas.
