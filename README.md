@@ -67,10 +67,11 @@ Uma feature não está concluída somente porque o código compila. Revisão, va
 Para adotar o ADF em outro projeto, siga esta ordem:
 
 1. **Preparar decisões locais:** antes de considerar o ADF pronto para uso, defina quais IAs serão usadas, quais modelos gratuitos existem no OpenCode, quem mantém a documentação e quais arquivos precisam ser preenchidos no projeto consumidor.
-2. [Instalar o ADF](Installer/FEATURE_INSTALAR_ADF.md): copiar a estrutura base e registrar a versão instalada.
-3. [Adaptar ao projeto](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): definir responsáveis, convenções, roteamento de IAs e extensões necessárias sem alterar silenciosamente o Core.
-4. [Popular a documentação](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): registrar visão, glossário, arquitetura, padrões e regras existentes.
-5. [Implantar o fluxo](Installer/FEATURE_IMPLANTAR_ADF.md): validar links, testar uma feature piloto e incorporar o processo ao trabalho da equipe.
+2. [Usar o instalador guiado](Installer/INSTALADOR_ADF.md): entregar este arquivo para a IA leitora fazer as perguntas obrigatórias, validar respostas, copiar o esqueleto do ADF e preencher `CONFIGURACAO_IAS.md` e `ADF_ADOCAO.md`.
+3. [Instalar o ADF](Installer/FEATURE_INSTALAR_ADF.md): copiar a estrutura base e registrar a versão instalada.
+4. [Adaptar ao projeto](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): definir responsáveis, convenções, roteamento de IAs e extensões necessárias sem alterar silenciosamente o Core.
+5. [Popular a documentação](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): registrar visão, glossário, arquitetura, padrões e regras existentes.
+6. [Implantar o fluxo](Installer/FEATURE_IMPLANTAR_ADF.md): validar links, testar uma feature piloto e incorporar o processo ao trabalho da equipe.
 
 Depois da instalação, toda tarefa deve começar em [`docs/INDICE_DOCUMENTACAO.md`](docs/INDICE_DOCUMENTACAO.md). Não é necessário ler toda a documentação: o índice indica a leitura mínima por papel e tipo de tarefa.
 
@@ -251,10 +252,11 @@ A feature is not complete merely because the code compiles. Review, applicable v
 Adopt ADF in this order:
 
 1. **Prepare local decisions:** before treating ADF as ready for use, define which AIs will be used, which free OpenCode models are available, who maintains the documentation, and which files must be filled in the adopting project.
-2. [Install ADF](Installer/FEATURE_INSTALAR_ADF.md): copy the base structure and record the installed version.
-3. [Adapt it to the project](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): define ownership, conventions, AI routing, and required extensions without silently modifying Core.
-4. [Populate documentation](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): record the existing vision, glossary, architecture, standards, and rules.
-5. [Deploy the workflow](Installer/FEATURE_IMPLANTAR_ADF.md): validate links, run a pilot feature, and incorporate the process into team practices.
+2. [Use the guided installer](Installer/INSTALADOR_ADF.md): give this file to the reader AI so it can ask the required questions, validate answers, copy the ADF skeleton, and fill `CONFIGURACAO_IAS.md` and `ADF_ADOCAO.md`.
+3. [Install ADF](Installer/FEATURE_INSTALAR_ADF.md): copy the base structure and record the installed version.
+4. [Adapt it to the project](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): define ownership, conventions, AI routing, and required extensions without silently modifying Core.
+5. [Populate documentation](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): record the existing vision, glossary, architecture, standards, and rules.
+6. [Deploy the workflow](Installer/FEATURE_IMPLANTAR_ADF.md): validate links, run a pilot feature, and incorporate the process into team practices.
 
 After installation, every task starts at [`docs/INDICE_DOCUMENTACAO.md`](docs/INDICE_DOCUMENTACAO.md). Reading the entire documentation set is unnecessary; the index identifies the minimum context for each role and task.
 
