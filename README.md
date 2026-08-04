@@ -75,6 +75,12 @@ Para adotar o ADF em outro projeto, siga esta ordem:
 
 Depois da instalação, toda tarefa deve começar em [`docs/INDICE_DOCUMENTACAO.md`](docs/INDICE_DOCUMENTACAO.md). Não é necessário ler toda a documentação: o índice indica a leitura mínima por papel e tipo de tarefa.
 
+### Como atualizar um projeto que ja usa ADF
+
+Para atualizar um projeto consumidor que ja possui ADF instalado, use [`Installer/UPDATE.md`](Installer/UPDATE.md) em vez de executar o instalador inicial novamente.
+
+O atualizador compara a versao instalada com a versao nova, usa [`Installer/MIGRACOES_ADF.md`](Installer/MIGRACOES_ADF.md) para descobrir o que mudou, copia apenas arquivos ausentes e pede autorizacao antes de alterar arquivos existentes. Documentos preenchidos pelo cliente devem ser preservados.
+
 ### O que configurar antes da primeira feature
 
 O ADF instala o esqueleto, mas cada projeto consumidor precisa preencher decisões locais antes de usar o fluxo com segurança.
@@ -108,6 +114,7 @@ A versão atual adiciona uma camada explícita para separar papel, ferramenta e 
 | [`README.md`](README.md) | Apresentação bilíngue do framework, seus conceitos, estrutura e forma de adoção. |
 | [`ADF_VERSION.md`](ADF_VERSION.md) | Versão atual do contrato ADF, política de versionamento e observações de compatibilidade. |
 | [`CHANGELOG_ADF.md`](CHANGELOG_ADF.md) | Histórico das mudanças do framework, com arquivos afetados, justificativas e benefícios. |
+| [`Installer`](Installer/UPDATE.md) | Roteiros para instalar, adaptar, popular, implantar e atualizar o ADF em projetos consumidores. |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Regras para propor alterações ao ADF sem introduzir dependência de domínio ou tecnologia. |
 | [`LICENSE`](LICENSE) | Termos da licença MIT aplicáveis ao uso e à distribuição. |
 
@@ -269,6 +276,12 @@ Adopt ADF in this order:
 
 After installation, every task starts at [`docs/INDICE_DOCUMENTACAO.md`](docs/INDICE_DOCUMENTACAO.md). Reading the entire documentation set is unnecessary; the index identifies the minimum context for each role and task.
 
+### How to update a project that already uses ADF
+
+To update an adopting project that already has ADF installed, use [`Installer/UPDATE.md`](Installer/UPDATE.md) instead of running the initial installer again.
+
+The updater compares the installed version with the new version, uses [`Installer/MIGRACOES_ADF.md`](Installer/MIGRACOES_ADF.md) to discover what changed, copies only missing files, and asks for authorization before changing existing files. Client-filled documents must be preserved.
+
 ### What to configure before the first feature
 
 ADF installs the skeleton, but each adopting project must fill local decisions before using the workflow safely.
@@ -302,6 +315,7 @@ The current version adds an explicit layer for separating role, tool, and execut
 | [`README.md`](README.md) | Bilingual introduction to the framework, its concepts, structure, and adoption process. |
 | [`ADF_VERSION.md`](ADF_VERSION.md) | Current ADF contract version, versioning policy, and compatibility notes. |
 | [`CHANGELOG_ADF.md`](CHANGELOG_ADF.md) | Framework change history, including affected files, rationale, and benefits. |
+| [`Installer`](Installer/UPDATE.md) | Guides for installing, adapting, populating, deploying, and updating ADF in adopting projects. |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Rules for changing ADF without introducing domain or technology dependencies. |
 | [`LICENSE`](LICENSE) | MIT License terms for use and distribution. |
 

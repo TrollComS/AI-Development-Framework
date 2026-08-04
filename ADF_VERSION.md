@@ -1,6 +1,6 @@
 # Versão do ADF
 
-**Versão:** 1.3.0
+**Versão:** 1.4.0
 
 **Esquema:** Semantic Versioning 2.0.0
 
@@ -9,6 +9,10 @@
 - **PATCH:** correção compatível.
 
 O projeto consumidor deve registrar a versão instalada e suas adaptações.
+
+## Compatibilidade da versão 1.4
+
+A versão 1.4 adiciona o fluxo de atualização assistida em `Installer/UPDATE.md` e o mapa de migrações em `Installer/MIGRACOES_ADF.md`. Projetos existentes podem atualizar o ADF sem reinstalar o esqueleto por cima da documentação local; não há movimentação de diretórios nem quebra dos caminhos da versão 1.3.
 
 ## Compatibilidade da versão 1.3
 

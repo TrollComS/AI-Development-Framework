@@ -1,5 +1,24 @@
 # Changelog do ADF
 
+## 1.4.0 — 2026-08-04
+
+### Criados
+
+- `Installer/UPDATE.md`: roteiro operacional para atualizar o ADF em projetos consumidores que ja possuem uma versao instalada.
+- `Installer/MIGRACOES_ADF.md`: mapa de migracoes por versao, com arquivos novos, arquivos a revisar e regras de preservacao.
+- `ADF/Features/FEATURE_CRIAR_ATUALIZADOR_ADF.md`: registro interno da feature de atualizacao assistida.
+
+### Alterados
+
+- README: adicionada diferenca entre instalacao inicial e atualizacao de projetos consumidores ja adotados.
+- Versao do ADF: atualizada para `1.4.0` como capacidade compativel nova.
+
+### Beneficios
+
+- Projetos consumidores antigos podem receber evolucoes do ADF sem sobrescrever documentacao local.
+- A IA atualizadora passa a ter um processo explicito para copiar arquivos ausentes, fazer merge assistido e registrar pendencias.
+- O historico de migracoes reduz inferencias e torna atualizacoes futuras mais previsiveis.
+
 ## 1.3.0 — 2026-08-04
 
 ### Criados

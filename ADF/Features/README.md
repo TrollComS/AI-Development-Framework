@@ -8,3 +8,4 @@ Use este local para propostas, melhorias e historico de evolucao do ADF base. Fe
 
 - [Atualizacao do framework baseada em aprendizados de projeto](FEATURE_ATUALIZACAO_ADF_BASEADO_INFOGESTOR.md)
 - [Melhorar instalador do ADF com limitacoes e documentacao inicial](FEATURE_MELHORAR_INSTALADOR_ADF_LIMITACOES_E_DOCUMENTACAO_PROJETO.md)
+- [Criar atualizador assistido do ADF](FEATURE_CRIAR_ATUALIZADOR_ADF.md)
