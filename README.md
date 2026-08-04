@@ -89,6 +89,8 @@ Para atualizar um projeto consumidor que ja possui ADF instalado, use [`Installe
 
 O atualizador compara a versao instalada com a versao nova, usa [`Installer/MIGRACOES_ADF.md`](Installer/MIGRACOES_ADF.md) para descobrir o que mudou, copia apenas arquivos ausentes e pede autorizacao antes de alterar arquivos existentes. Documentos preenchidos pelo cliente devem ser preservados.
 
+Se o instalador novo trouxer perguntas, validacoes ou etapas que nao existiam na versao instalada, o atualizador deve listar essas novidades e perguntar se o usuario deseja executa-las agora ou registra-las como pendencia.
+
 ### O que configurar antes da primeira feature
 
 O ADF instala o esqueleto, mas cada projeto consumidor precisa preencher decisões locais antes de usar o fluxo com segurança.
@@ -297,6 +299,8 @@ After installation, every task starts at [`docs/INDICE_DOCUMENTACAO.md`](docs/IN
 To update an adopting project that already has ADF installed, use [`Installer/UPDATE.md`](Installer/UPDATE.md) instead of running the initial installer again.
 
 The updater compares the installed version with the new version, uses [`Installer/MIGRACOES_ADF.md`](Installer/MIGRACOES_ADF.md) to discover what changed, copies only missing files, and asks for authorization before changing existing files. Client-filled documents must be preserved.
+
+If the new installer introduces questions, validations, or steps that did not exist in the installed version, the updater must list them and ask whether the user wants to run them now or record them as pending.
 
 ### What to configure before the first feature
 
