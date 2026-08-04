@@ -185,7 +185,37 @@ Posso aplicar esse merge? Responda sim ou nao.
 
 Se o usuario responder `nao`, registre pendencia em `docs/Projeto/ADF_ADOCAO.md`.
 
-### 9. Registrar atualizacao
+### 9. Executar etapas novas introduzidas pelo instalador
+
+Depois de atualizar ou revisar `Installer/INSTALADOR_ADF.md`, compare a versao antiga e a nova do instalador.
+
+Procure novas perguntas, etapas opcionais, etapas obrigatorias, validacoes, arquivos obrigatorios ou documentos recomendados que nao existiam na versao instalada.
+
+Classifique cada item novo:
+
+- `Obrigatorio`: necessario para o ADF atualizado funcionar corretamente.
+- `Opcional`: melhora contexto ou seguranca, mas pode ser recusado pelo usuario.
+- `Pendente`: exige decisao humana, acesso externo ou informacao ainda indisponivel.
+
+Mostre ao usuario:
+
+```text
+Encontrei novas etapas no instalador atualizado:
+
+- Obrigatorias: LISTA
+- Opcionais: LISTA
+- Pendentes: LISTA
+
+Deseja executar agora as etapas novas aplicaveis? Responda sim ou nao.
+```
+
+Se o usuario responder `sim`, conduza somente as etapas novas. Nao repita perguntas antigas ja respondidas, nao reinstale o ADF e nao sobrescreva documentos existentes.
+
+Se uma etapa nova criar ou atualizar documento local do projeto consumidor, siga as mesmas regras de preservacao deste atualizador: verificar existencia, mostrar resumo, pedir autorizacao e registrar pendencia quando nao houver autorizacao.
+
+Se o usuario responder `nao`, registre as etapas novas como pendencias em `docs/Projeto/ADF_ADOCAO.md`.
+
+### 10. Registrar atualizacao
 
 Atualize `PROJECT_ROOT\docs\Projeto\ADF_ADOCAO.md` sem apagar historico.
 
@@ -203,13 +233,13 @@ Se houver pendencias:
 | Revisar merge pendente do arquivo CAMINHO | RESPONSAVEL | A definir | Pendente |
 ```
 
-### 10. Atualizar versao
+### 11. Atualizar versao
 
 Atualize `PROJECT_ROOT\ADF_VERSION.md` para a versao alvo.
 
 Se o projeto consumidor tiver adaptacoes locais nesse arquivo, preserve-as e acrescente a versao nova sem apagar observacoes existentes.
 
-### 11. Validacao final
+### 12. Validacao final
 
 Verifique:
 
@@ -227,6 +257,7 @@ Confirme que:
 - nenhum arquivo local do cliente foi sobrescrito sem autorizacao;
 - o diretorio `ADF` nao foi copiado para o projeto consumidor;
 - `docs/Features` contem apenas features do projeto consumidor;
+- novas etapas do instalador foram executadas ou registradas como pendencia;
 - pendencias foram registradas quando um merge foi recusado ou incerto;
 - links adicionados apontam para arquivos existentes.
 
@@ -276,6 +307,8 @@ RESPOSTA_OU_AUTORIZACAO_NECESSARIA
 - [ ] Mostrei plano antes de editar.
 - [ ] Copiei somente arquivos ausentes.
 - [ ] Pedi autorizacao antes de alterar arquivos existentes.
+- [ ] Identifiquei novas etapas introduzidas pelo instalador atualizado.
+- [ ] Executei etapas novas autorizadas ou registrei pendencias.
 - [ ] Preservei documentos locais do projeto consumidor.
 - [ ] Nao copiei o diretorio `ADF`.
 - [ ] Atualizei ou registrei pendencia em `ADF_ADOCAO.md`.

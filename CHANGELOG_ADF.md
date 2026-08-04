@@ -11,12 +11,14 @@
 ### Alterados
 
 - README: adicionada diferenca entre instalacao inicial e atualizacao de projetos consumidores ja adotados.
+- Atualizador: adicionada verificacao de novas perguntas, etapas, validacoes ou documentos introduzidos pelo instalador atualizado.
 - Versao do ADF: atualizada para `1.4.0` como capacidade compativel nova.
 
 ### Beneficios
 
 - Projetos consumidores antigos podem receber evolucoes do ADF sem sobrescrever documentacao local.
 - A IA atualizadora passa a ter um processo explicito para copiar arquivos ausentes, fazer merge assistido e registrar pendencias.
+- Novas etapas do instalador podem ser executadas apos o update ou registradas como pendencia quando o usuario preferir adiar.
 - O historico de migracoes reduz inferencias e torna atualizacoes futuras mais previsiveis.
 
 ## 1.3.0 — 2026-08-04

@@ -11,6 +11,7 @@ Use junto com `Installer/UPDATE.md`.
 - Em arquivos existentes, faca merge assistido e peca autorizacao antes de editar.
 - Nao copie o diretorio `ADF/**` para projetos consumidores.
 - Registre pendencias em `docs/Projeto/ADF_ADOCAO.md` quando uma atualizacao nao puder ser aplicada com seguranca.
+- Quando `Installer/INSTALADOR_ADF.md` mudar, verifique se surgiram novas perguntas, etapas, validacoes ou documentos e execute apenas as etapas novas autorizadas pelo usuario.
 
 ## Sem versao identificada -> versao atual
 
@@ -130,6 +131,7 @@ Esses arquivos nao devem ser copiados para projetos consumidores.
 
 - Copiar os novos templates quando ausentes.
 - Acrescentar ao instalador as perguntas opcionais sobre limitacoes de execucao e documentacao inicial.
+- Depois de atualizar o instalador, oferecer ao usuario a execucao dessas novas etapas opcionais.
 - Remover de `docs/Features/README.md` qualquer referencia a features internas do ADF.
 - Garantir que `docs/Features` seja descrito como area do projeto consumidor.
 - Registrar `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` apenas quando o usuario autorizar.
@@ -151,5 +153,6 @@ Esses arquivos nao devem ser copiados para projetos consumidores.
 
 - Copiar `UPDATE.md` e `MIGRACOES_ADF.md` quando ausentes.
 - Acrescentar ao README a diferenca entre instalacao inicial e atualizacao de projeto consumidor ja adotado.
+- Acrescentar ao atualizador a regra para detectar e executar etapas novas introduzidas pelo instalador.
 - Atualizar `ADF_VERSION.md` para `1.4.0`.
 - Registrar no `CHANGELOG_ADF.md` a criacao do fluxo de atualizacao assistida.
