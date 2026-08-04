@@ -1,6 +1,6 @@
 # Versão do ADF
 
-**Versão:** 1.2.0
+**Versão:** 1.3.0
 
 **Esquema:** Semantic Versioning 2.0.0
 
@@ -9,6 +9,10 @@
 - **PATCH:** correção compatível.
 
 O projeto consumidor deve registrar a versão instalada e suas adaptações.
+
+## Compatibilidade da versão 1.3
+
+A versão 1.3 amplia o instalador guiado com duas etapas opcionais: registro de limitações locais para execução de features e geração de documentação inicial do projeto consumidor. Projetos existentes podem continuar usando a instalação básica; não há movimentação de diretórios nem quebra dos caminhos da versão 1.2.
 
 ## Compatibilidade da versão 1.2
 

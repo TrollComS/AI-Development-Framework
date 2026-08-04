@@ -36,6 +36,8 @@ Consulte também o [guia de organização](GUIA_ORGANIZACAO_DOCUMENTACAO.md).
 ### Templates
 
 - [Feature](../Templates/TEMPLATE_FEATURE.md)
+- [Limitacoes de execucao de features](../Templates/TEMPLATE_LIMITACOES_EXECUCAO_FEATURES.md)
+- [Documentacao inicial do projeto](../Templates/TEMPLATE_DOCUMENTACAO_INICIAL_PROJETO.md)
 - [Plano de implementação](../Templates/TEMPLATE_PLANO_IMPLEMENTACAO.md)
 - [Checklist de implementação](../Templates/TEMPLATE_CHECKLIST_IMPLEMENTACAO.md)
 - [Revisão](../Templates/TEMPLATE_REVISAO.md)
@@ -51,9 +53,14 @@ Consulte também o [guia de organização](GUIA_ORGANIZACAO_DOCUMENTACAO.md).
 - [Projeto](../../Projeto/README.md)
 - [Adoção do ADF no projeto](../../Projeto/ADF_ADOCAO.md)
 - [Configuração de IAs do projeto](../../Projeto/CONFIGURACAO_IAS.md)
+- `Projeto/LIMITACOES_EXECUCAO_FEATURES.md`: leitura obrigatoria antes de features quando existir no projeto consumidor.
 - [Arquitetura](../../Arquitetura/README.md)
+- `Arquitetura/MAPA_PROJETOS.md`: mapa inicial de solucoes, projetos, pacotes e modulos quando gerado.
+- `Arquitetura/COMPONENTES.md`: componentes e responsabilidades quando gerado.
+- `Arquitetura/INTEGRACOES.md`: integracoes e pendencias quando gerado.
 - [Padrões](../../Padroes/README.md)
+- `Padroes/PADROES_TECNICOS.md`: padroes tecnicos observados quando gerado.
 - [Regras de negócio](../../RegrasNegocio/README.md)
-- [Features](../../Features/README.md)
+- [Features do projeto consumidor](../../Features/README.md)
 - [Revisões](../../Revisoes/README.md)
 - [Exemplo de feature](../../Samples/FEATURE_EXEMPLO.md)

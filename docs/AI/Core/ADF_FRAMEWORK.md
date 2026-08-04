@@ -16,6 +16,6 @@ O ADF é uma camada documental versionada para dar contexto confiável a pessoas
 
 ## Adoção mínima
 
-Visão, glossário, arquitetura, padrões essenciais, uma feature ADF, índice navegável e responsável pela manutenção.
+Visão, glossário, arquitetura, padrões essenciais, uma feature do projeto consumidor, índice navegável e responsável pela manutenção.
 
 O ADF pode ser estendido; adaptações do Core devem ser registradas.

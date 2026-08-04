@@ -1,5 +1,26 @@
 # Changelog do ADF
 
+## 1.3.0 — 2026-08-04
+
+### Criados
+
+- `ADF/Features`: área interna para features do próprio framework, separada do esqueleto documental do projeto consumidor.
+- `docs/AI/Templates/TEMPLATE_LIMITACOES_EXECUCAO_FEATURES.md`: template para registrar limitações locais informadas pelo usuário.
+- `docs/AI/Templates/TEMPLATE_DOCUMENTACAO_INICIAL_PROJETO.md`: contrato para documentação inicial curta, com informações informadas, inferidas e pendentes.
+
+### Alterados
+
+- Features internas do ADF movidas de `docs/Features` para `ADF/Features`.
+- Instalador guiado: adicionadas perguntas opcionais para limitações de execução de features e documentação inicial do projeto consumidor.
+- Índice, mapa documental, checklist, fluxo e guias: agora apontam para limitações locais quando existirem e para os documentos iniciais opcionais.
+- Versão do ADF: atualizada para `1.3.0` como capacidade compatível nova.
+
+### Benefícios
+
+- A instalação básica continua funcionando com respostas `nao`.
+- Projetos consumidores podem registrar áreas sensíveis e validações obrigatórias antes de executar features.
+- A documentação inicial passa a diferenciar informação fornecida pelo usuário, inferida pela IA e pendente de confirmação humana.
+
 ## 1.2.0 — 2026-07-14
 
 ### Criados

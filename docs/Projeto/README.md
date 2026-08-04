@@ -5,3 +5,5 @@ Mantenha visão, glossário, stakeholders, escopo, configuração de IAs e o reg
 `CONFIGURACAO_IAS.md` define a IA Pensante, a IA Dev Principal, o uso obrigatório do OpenCode e os modelos gratuitos permitidos no projeto.
 
 `ADF_ADOCAO.md` registra responsáveis, cadência, convenções locais, adaptações aceitas e pendências de implantação do ADF no projeto consumidor.
+
+`LIMITACOES_EXECUCAO_FEATURES.md`, quando existir, registra restrições locais informadas pelo usuário e deve ser lido antes de planejar ou executar features.

@@ -4,6 +4,7 @@
 - [ ] Objetivo, escopo e conclusão estão claros.
 - [ ] Papel e skill adequados foram escolhidos.
 - [ ] Configuração de IAs foi consultada e a rota de execução foi definida.
+- [ ] `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` foi consultado quando existir.
 - [ ] Somente o contexto relacionado foi carregado.
 - [ ] Critérios de aceite são verificáveis.
 - [ ] Mudanças locais não relacionadas foram preservadas.

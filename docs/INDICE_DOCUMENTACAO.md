@@ -2,7 +2,7 @@
 
 Este é o ponto único de entrada do ADF. Comece aqui e carregue somente os documentos necessários à tarefa. Os mapas são catálogos, não roteiros de leitura.
 
-Antes de planejar ou executar uma mudança, consulte `docs/Projeto/CONFIGURACAO_IAS.md` e aplique o [Roteamento de IAs](AI/Core/ROTEAMENTO_IAS.md).
+Antes de planejar ou executar uma mudança, consulte `docs/Projeto/CONFIGURACAO_IAS.md`, verifique se existe `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` e aplique o [Roteamento de IAs](AI/Core/ROTEAMENTO_IAS.md).
 
 ## Leitura mínima por papel
 
@@ -59,10 +59,15 @@ Antes de planejar ou executar uma mudança, consulte `docs/Projeto/CONFIGURACAO_
 - `Projeto`: visão, glossário, status, roadmap, configuração de IAs e histórico.
 - `Projeto/ADF_ADOCAO.md`: responsáveis, cadência, convenções locais, adaptações aceitas e pendências de implantação.
 - `Projeto/CONFIGURACAO_IAS.md`: IA Pensante, IA Dev Principal, OpenCode, modelos gratuitos e matriz de roteamento.
+- `Projeto/LIMITACOES_EXECUCAO_FEATURES.md`: limitações locais que devem ser lidas antes de planejar ou executar features, quando existir.
 - `Arquitetura`: contexto, componentes, integrações e ADRs.
+- `Arquitetura/MAPA_PROJETOS.md`: mapa inicial de soluções, projetos, pacotes e módulos, quando gerado.
+- `Arquitetura/COMPONENTES.md`: componentes e responsabilidades observadas ou confirmadas, quando gerado.
+- `Arquitetura/INTEGRACOES.md`: integrações identificadas e pendências de confirmação, quando gerado.
 - `Padroes`: convenções técnicas e de processo.
+- `Padroes/PADROES_TECNICOS.md`: padrões técnicos observados no projeto consumidor, quando gerado.
 - `RegrasNegocio`: invariantes do domínio.
-- `Features`: especificações e evidências das entregas.
+- `Features`: especificações e evidências das entregas do projeto consumidor.
 - `Revisoes`: pareceres que precisem ser preservados.
 
 Templates, prompts e exemplos ficam em `AI/Templates`, `AI/Prompts` e `Samples`.

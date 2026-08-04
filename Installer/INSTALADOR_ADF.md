@@ -41,6 +41,16 @@ E os arquivos abaixo devem estar preenchidos com as respostas do usuario:
 - `docs/Projeto/CONFIGURACAO_IAS.md`
 - `docs/Projeto/ADF_ADOCAO.md`
 
+Opcionalmente, quando o usuario autorizar, o instalador tambem pode criar:
+
+- `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md`
+- `docs/Projeto/VISAO_PROJETO.md`
+- `docs/Arquitetura/MAPA_PROJETOS.md`
+- `docs/Arquitetura/COMPONENTES.md`
+- `docs/Arquitetura/INTEGRACOES.md`
+- `docs/Padroes/PADROES_TECNICOS.md`
+- `docs/RegrasNegocio/README.md` atualizado com pendencias e regras confirmadas
+
 ## Como conduzir a conversa
 
 Faca uma pergunta por vez.
@@ -52,6 +62,28 @@ Para cada resposta:
 3. Se estiver vaga, pare e peca uma resposta melhor.
 4. Se o usuario pedir exemplo ou sugestao, mostre exemplos e repita a mesma pergunta.
 5. Se precisar executar comando, explique o comando antes, execute, leia o resultado e continue.
+
+Para perguntas de decisao `sim`/`nao`, aceite somente respostas equivalentes a `sim` ou `nao`.
+
+Respostas aceitas como `sim`:
+
+- `sim`
+- `s`
+- `yes`
+- `y`
+
+Respostas aceitas como `nao`:
+
+- `nao`
+- `não`
+- `n`
+- `no`
+
+Se a resposta nao for clara, diga:
+
+```text
+Preciso de uma resposta simples: sim ou nao.
+```
 
 Modelo para resposta invalida:
 
@@ -82,6 +114,18 @@ Colete e valide estes dados antes de copiar ou editar qualquer arquivo.
 | `FEATURE_STATES` | Quais estados de feature o projeto usara? | `Proposta, Planejada, Em execucao, Em revisao, Concluida` | `docs/Projeto/ADF_ADOCAO.md` |
 | `FEATURE_ID_PATTERN` | Qual padrao de identificacao de features sera usado? | `FEATURE_NOME_DA_FEATURE.md` | `docs/Projeto/ADF_ADOCAO.md` |
 | `PROJECT_DIR_MAP` | Quais diretorios reais do projeto devem ser mapeados no ADF? | `src=Codigo principal, tests=Testes, docs=Documentacao` | `docs/Projeto/ADF_ADOCAO.md` |
+
+## Dados opcionais
+
+Colete estes dados somente quando o usuario responder `sim` para a etapa correspondente.
+
+| Campo | Pergunta ao usuario | Exemplo ideal | Onde gravar |
+|---|---|---|---|
+| `FEATURE_EXECUTION_LIMITATIONS_ENABLED` | Deseja registrar limitacoes para execucao de features neste projeto? Responda sim ou nao. | `sim` | Controle do fluxo |
+| `FEATURE_EXECUTION_LIMITATIONS` | Informe as limitacoes em formato simples. | `Nao alterar Scripts sem autorizacao; nao modificar fluxo de pagamento sem revisao; sempre executar build antes de finalizar.` | `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` |
+| `INITIAL_PROJECT_DOCS_ENABLED` | Deseja que eu analise o projeto atual e gere uma documentacao inicial nos arquivos do ADF? Responda sim ou nao. | `sim` | Controle do fluxo |
+
+As etapas opcionais devem ser executadas depois da instalacao basica e antes da validacao final.
 
 ## Validacoes obrigatorias
 
@@ -239,6 +283,8 @@ Itens a copiar:
 - `ADF_VERSION.md`
 - `docs`
 
+Nao copie o diretorio `ADF` do repositorio base durante a instalacao comum. Esse diretorio guarda features e historico interno do framework, nao documentos do projeto consumidor.
+
 Opcionalmente, se o usuario quiser manter os documentos de instalacao no projeto consumidor, copie tambem:
 
 - `Installer`
@@ -356,6 +402,136 @@ src=Codigo principal, tests=Testes automatizados, docs=Documentacao, scripts=Aut
 ```
 
 Depois repita a pergunta original.
+
+### 9. Perguntar sobre limitacoes de execucao de features
+
+Pergunte:
+
+```text
+Deseja registrar limitacoes para execucao de features neste projeto? Responda sim ou nao.
+```
+
+Valide a resposta como `sim` ou `nao`.
+
+Se a resposta for `nao`, registre internamente:
+
+```text
+Limitacoes de execucao: nao registradas por escolha do usuario.
+```
+
+Nao crie `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` obrigatoriamente.
+
+Se a resposta for `sim`, pergunte:
+
+```text
+Informe as limitacoes em formato simples.
+```
+
+Exemplo:
+
+```text
+Nao alterar Scripts sem autorizacao; nao modificar fluxo de pagamento sem revisao; sempre executar build antes de finalizar.
+```
+
+Valide que a resposta:
+
+- contem pelo menos uma limitacao objetiva;
+- nao contem segredo, token ou chave;
+- pode ser revisada por humanos;
+- nao contradiz o fluxo obrigatorio do ADF.
+
+Se a resposta estiver vaga, peca uma versao mais objetiva.
+
+Antes de criar o arquivo, verifique:
+
+```powershell
+Test-Path "PROJECT_ROOT\docs\Projeto\LIMITACOES_EXECUCAO_FEATURES.md"
+```
+
+Se o arquivo ja existir, leia o conteudo e diga:
+
+```text
+Ja existe um documento de limitacoes de execucao. Vou preservar o conteudo existente. Posso acrescentar as novas limitacoes ao final do arquivo? Responda sim ou nao.
+```
+
+Se o usuario responder `nao`, nao altere o arquivo e registre a pendencia em `ADF_ADOCAO.md`.
+
+Se o arquivo nao existir ou o usuario autorizar acrescentar, crie ou atualize o documento usando o template `docs/AI/Templates/TEMPLATE_LIMITACOES_EXECUCAO_FEATURES.md`.
+
+O arquivo deve deixar claro que as limitacoes foram informadas pelo usuario durante a instalacao.
+
+### 10. Perguntar sobre documentacao inicial do projeto
+
+Pergunte:
+
+```text
+Deseja que eu analise o projeto atual e gere uma documentacao inicial nos arquivos do ADF? Responda sim ou nao.
+```
+
+Valide a resposta como `sim` ou `nao`.
+
+Se a resposta for `nao`, registre internamente:
+
+```text
+Documentacao inicial do projeto: nao realizada por escolha do usuario.
+```
+
+Execute apenas a instalacao basica do ADF.
+
+Se a resposta for `sim`, analise a estrutura real do projeto consumidor antes de editar documentos.
+
+Priorize:
+
+- arquivos de solucao e projeto, como `.sln`, `.csproj`, `.fsproj`, `.vbproj`, `package.json`, `pom.xml`, `build.gradle`, `pyproject.toml`, `go.mod`, `Cargo.toml`;
+- diretorios principais, como `src`, `tests`, `test`, `app`, `api`, `web`, `frontend`, `backend`, `scripts`, `infra`, `docs`;
+- documentacao existente, como `README.md`, `CHANGELOG.md`, `docs/**`;
+- nomes de modulos, projetos, pacotes e servicos;
+- arquivos de configuracao que indiquem integracoes, sem expor segredos.
+
+Nao leia nem copie valores de segredos, tokens, chaves ou arquivos sensiveis.
+
+Com PowerShell, a IA pode usar consultas similares a:
+
+```powershell
+Get-ChildItem "PROJECT_ROOT" -Force -File
+Get-ChildItem "PROJECT_ROOT" -Force -Directory
+Get-ChildItem "PROJECT_ROOT" -Recurse -File -Include *.sln,*.csproj,*.fsproj,*.vbproj,package.json,pom.xml,build.gradle,pyproject.toml,go.mod,Cargo.toml,README.md,CHANGELOG.md
+```
+
+Mantenha a documentacao inicial curta, objetiva e util para orientar features futuras.
+
+Os documentos que podem ser criados ou preenchidos sao:
+
+- `docs/Projeto/VISAO_PROJETO.md`
+- `docs/Arquitetura/MAPA_PROJETOS.md`
+- `docs/Arquitetura/COMPONENTES.md`
+- `docs/Arquitetura/INTEGRACOES.md`
+- `docs/Padroes/PADROES_TECNICOS.md`
+- `docs/RegrasNegocio/README.md`
+
+Use `docs/AI/Templates/TEMPLATE_DOCUMENTACAO_INICIAL_PROJETO.md` como contrato de preenchimento.
+
+Cada informacao registrada deve ser marcada em uma destas categorias:
+
+- `Informado pelo usuario`: dado declarado explicitamente pelo usuario.
+- `Inferido da estrutura do projeto`: dado deduzido a partir de arquivos, diretorios ou nomes.
+- `Pendente de confirmacao humana`: dado incerto, incompleto ou nao comprovado.
+
+Nao registre regras de negocio como verdade quando elas forem apenas suspeitas. Quando nao houver confianca suficiente, registre a regra como pendencia em `docs/RegrasNegocio/README.md`.
+
+Antes de criar ou atualizar cada documento, verifique se ele ja existe.
+
+Se existir, diga:
+
+```text
+O arquivo CAMINHO_DO_DOCUMENTO ja existe. Posso acrescentar uma secao de documentacao inicial preservando o conteudo atual? Responda sim ou nao.
+```
+
+Se o usuario responder `nao`, preserve o arquivo e registre a pendencia em `docs/Projeto/ADF_ADOCAO.md`.
+
+Se o arquivo nao existir, crie-o com conteudo inicial curto.
+
+Ao criar novos documentos, atualize `docs/INDICE_DOCUMENTACAO.md` e `docs/AI/Core/MAPA_DOCUMENTACAO.md` para apontar para eles. Se esses indices ja existirem no projeto consumidor, preserve o conteudo atual e acrescente apenas links ausentes.
 
 ## Como preencher `docs/Projeto/CONFIGURACAO_IAS.md`
 
@@ -489,6 +665,93 @@ Se OpenCode ou modelos ficarem pendentes, preencha:
 | Configurar modelos gratuitos no OpenCode | ADF_OWNER | A definir | Pendente |
 ```
 
+Se limitacoes de execucao ou documentacao inicial ficarem pendentes por falta de autorizacao para atualizar arquivos existentes, registre tambem uma linha objetiva na tabela de pendencias.
+
+Exemplos:
+
+```markdown
+| Revisar atualizacao de LIMITACOES_EXECUCAO_FEATURES.md | ADF_OWNER | A definir | Pendente |
+| Revisar documentacao inicial preservada sem atualizacao automatica | ADF_OWNER | A definir | Pendente |
+```
+
+## Como criar `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md`
+
+Crie este arquivo somente quando o usuario responder `sim` para registrar limitacoes.
+
+Use este formato:
+
+```markdown
+# Limitacoes de execucao de features
+
+**Estado:** Ativo
+**Origem:** Informado pelo usuario durante a instalacao do ADF
+**Ultima revisao:** DATA_ATUAL
+**Responsavel:** ADF_OWNER
+
+## Leitura obrigatoria
+
+Toda IA deve ler este documento antes de planejar ou executar features neste projeto.
+
+## Limitacoes informadas pelo usuario
+
+- LIMITACAO_1
+- LIMITACAO_2
+
+## Pendencias de confirmacao humana
+
+- Nenhuma pendencia inicial registrada.
+```
+
+Se o usuario informar as limitacoes separadas por ponto e virgula, transforme cada item em uma linha.
+
+Nao adicione limitacoes inferidas pela IA. Quando uma limitacao parecer necessaria mas nao tiver sido informada, registre em `Pendencias de confirmacao humana`.
+
+## Como gerar documentacao inicial do projeto
+
+Gere a documentacao inicial somente quando o usuario responder `sim`.
+
+Antes de editar, apresente um resumo da analise:
+
+```text
+Resumo da analise para documentacao inicial:
+- Arquivos de solucao/projeto encontrados: LISTA
+- Diretorios principais encontrados: LISTA
+- Documentacao existente encontrada: LISTA
+- Integracoes ou tecnologias aparentes: LISTA
+- Pendencias que exigem confirmacao humana: LISTA
+
+Posso criar ou atualizar os documentos iniciais do ADF preservando conteudo existente? Responda sim ou nao.
+```
+
+Se o usuario responder `nao`, nao gere a documentacao inicial e registre pendencia em `ADF_ADOCAO.md`.
+
+Se o usuario responder `sim`, preencha apenas o que for sustentado por fontes claras:
+
+- `docs/Projeto/VISAO_PROJETO.md`: proposito, escopo, stakeholders e restricoes quando informados ou inferiveis com baixa incerteza.
+- `docs/Arquitetura/MAPA_PROJETOS.md`: solucoes, projetos, pacotes e modulos identificados.
+- `docs/Arquitetura/COMPONENTES.md`: componentes e responsabilidades aparentes.
+- `docs/Arquitetura/INTEGRACOES.md`: integracoes identificadas por configuracoes, pacotes, nomes de clientes ou documentacao existente.
+- `docs/Padroes/PADROES_TECNICOS.md`: padroes tecnicos observaveis em arquivos de projeto, scripts e estrutura.
+- `docs/RegrasNegocio/README.md`: somente regras confirmadas; suspeitas devem ficar como pendencias.
+
+Em todos os documentos gerados, inclua uma secao curta chamada `Classificacao das informacoes` com:
+
+```markdown
+## Classificacao das informacoes
+
+- **Informado pelo usuario:** <itens ou Nao informado>
+- **Inferido da estrutura do projeto:** <itens ou Nao identificado>
+- **Pendente de confirmacao humana:** <itens ou Nenhuma pendencia inicial registrada>
+```
+
+Nao sobrescreva documentos existentes. Quando autorizado, acrescente uma secao chamada:
+
+```markdown
+## Documentacao inicial gerada pelo ADF em DATA_ATUAL
+```
+
+e mantenha o conteudo anterior intacto.
+
 ## Confirmacao antes de editar arquivos
 
 Antes de alterar `CONFIGURACAO_IAS.md` e `ADF_ADOCAO.md`, mostre um resumo:
@@ -506,6 +769,8 @@ Resumo da instalacao:
 - Estados de feature: FEATURE_STATES
 - Padrao de features: FEATURE_ID_PATTERN
 - Mapeamento de diretorios: PROJECT_DIR_MAP
+- Limitacoes de execucao: registradas ou nao registradas
+- Documentacao inicial do projeto: solicitada ou nao solicitada
 
 Posso aplicar essas informacoes nos arquivos do ADF? Responda sim ou nao.
 ```
@@ -523,6 +788,14 @@ Test-Path "PROJECT_ROOT\docs\AI\Core\ADF_FRAMEWORK.md"
 Test-Path "PROJECT_ROOT\docs\Projeto\CONFIGURACAO_IAS.md"
 Test-Path "PROJECT_ROOT\docs\Projeto\ADF_ADOCAO.md"
 ```
+
+Se o usuario respondeu `sim` para limitacoes, verifique tambem:
+
+```powershell
+Test-Path "PROJECT_ROOT\docs\Projeto\LIMITACOES_EXECUCAO_FEATURES.md"
+```
+
+Se o usuario respondeu `sim` para documentacao inicial, verifique os documentos criados ou atualizados e confirme que todos diferenciam informacao informada, inferida e pendente.
 
 Leia os dois arquivos preenchidos e confirme que nao sobrou `A definir` em campos obrigatorios, exceto quando o usuario autorizou registrar pendencia.
 
@@ -546,11 +819,17 @@ Ao concluir, responda:
 ```text
 Instalacao do ADF concluida.
 
+Modo da instalacao:
+- MODO_INSTALACAO
+- Limitacoes de execucao: STATUS_LIMITACOES
+- Documentacao inicial do projeto: STATUS_DOCUMENTACAO_INICIAL
+
 Arquivos principais criados ou atualizados:
 - ADF_VERSION.md
 - docs/INDICE_DOCUMENTACAO.md
 - docs/Projeto/CONFIGURACAO_IAS.md
 - docs/Projeto/ADF_ADOCAO.md
+- DOCUMENTOS_OPCIONAIS_QUANDO_EXISTIREM
 
 Configuracao aplicada:
 - IA Pensante: THINKING_AI
@@ -584,6 +863,12 @@ RESPOSTA_OU_AUTORIZACAO_NECESSARIA
 - [ ] Coletei responsaveis.
 - [ ] Coletei configuracao de IAs.
 - [ ] Coletei convencoes locais.
+- [ ] Perguntei sobre limitacoes de execucao de features.
+- [ ] Criei ou preservei `LIMITACOES_EXECUCAO_FEATURES.md` conforme resposta do usuario.
+- [ ] Perguntei sobre documentacao inicial do projeto.
+- [ ] Analisei a estrutura real do projeto somente se autorizado.
+- [ ] Criei ou atualizei documentacao inicial somente se autorizado.
+- [ ] Diferenciei informacoes informadas, inferidas e pendentes.
 - [ ] Mostrei resumo antes de editar arquivos.
 - [ ] Preenchi `docs/Projeto/CONFIGURACAO_IAS.md`.
 - [ ] Preenchi `docs/Projeto/ADF_ADOCAO.md`.

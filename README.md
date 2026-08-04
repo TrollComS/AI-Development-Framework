@@ -67,7 +67,7 @@ Uma feature não está concluída somente porque o código compila. Revisão, va
 Para adotar o ADF em outro projeto, siga esta ordem:
 
 1. **Preparar decisões locais:** antes de considerar o ADF pronto para uso, defina quais IAs serão usadas, quais modelos gratuitos existem no OpenCode, quem mantém a documentação e quais arquivos precisam ser preenchidos no projeto consumidor.
-2. [Usar o instalador guiado](Installer/INSTALADOR_ADF.md): entregar este arquivo para a IA leitora fazer as perguntas obrigatórias, validar respostas, copiar o esqueleto do ADF e preencher `CONFIGURACAO_IAS.md` e `ADF_ADOCAO.md`.
+2. [Usar o instalador guiado](Installer/INSTALADOR_ADF.md): entregar este arquivo para a IA leitora fazer as perguntas obrigatórias, validar respostas, copiar o esqueleto do ADF, preencher `CONFIGURACAO_IAS.md` e `ADF_ADOCAO.md` e, se autorizado, registrar limitações locais e documentação inicial do projeto.
 3. [Instalar o ADF](Installer/FEATURE_INSTALAR_ADF.md): copiar a estrutura base e registrar a versão instalada.
 4. [Adaptar ao projeto](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): definir responsáveis, convenções, roteamento de IAs e extensões necessárias sem alterar silenciosamente o Core.
 5. [Popular a documentação](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): registrar visão, glossário, arquitetura, padrões e regras existentes.
@@ -83,6 +83,7 @@ O ADF instala o esqueleto, mas cada projeto consumidor precisa preencher decisõ
 |---|---|---|
 | [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) | IA Pensante principal, IA Dev Principal, exigência do OpenCode, modelos gratuitos disponíveis, melhor uso de cada modelo e rota alternativa. | Permite que a IA Pensante saiba quando executar, quando delegar para código pesado e quando usar OpenCode sem depender de suposição. |
 | [`docs/Projeto/ADF_ADOCAO.md`](docs/Projeto/ADF_ADOCAO.md) | Responsável pelo ADF, cadência de revisão, desvios aceitos, ferramentas usadas e decisões locais de adoção. | Registra como o framework foi adaptado ao projeto sem modificar o Core. |
+| `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` | Limitações locais informadas pelo usuário, quando criadas durante a instalação. | Impede que IAs avancem em áreas sensíveis sem autorização ou validação combinada. |
 | [`docs/Projeto/README.md`](docs/Projeto/README.md) | Visão, escopo, glossário, stakeholders e estado do projeto consumidor. | Dá contexto de produto para a IA entender intenção e limites. |
 | [`docs/Arquitetura/README.md`](docs/Arquitetura/README.md) | Componentes, integrações, decisões, riscos técnicos e atributos de qualidade. | Ajuda a decidir se uma mudança é simples, estrutural ou deve ir para a IA Dev Principal. |
 | [`docs/Padroes/README.md`](docs/Padroes/README.md) | Convenções de código, testes, layout, commits, revisão e organização. | Mantém as entregas consistentes entre pessoas, IA Dev Principal e OpenCode. |
@@ -110,7 +111,13 @@ A versão atual adiciona uma camada explícita para separar papel, ferramenta e 
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Regras para propor alterações ao ADF sem introduzir dependência de domínio ou tecnologia. |
 | [`LICENSE`](LICENSE) | Termos da licença MIT aplicáveis ao uso e à distribuição. |
 
-#### `docs`: documentação operacional e do projeto consumidor
+#### `ADF`: evolução interna do framework
+
+| Caminho | Para que serve |
+|---|---|
+| [`ADF/Features`](ADF/Features/README.md) | Features e propostas de evolução do próprio framework ADF. Não deve ser copiado para projetos consumidores na instalação comum. |
+
+#### `docs`: esqueleto documental do projeto consumidor
 
 | Caminho | Para que serve |
 |---|---|
@@ -123,7 +130,7 @@ A versão atual adiciona uma camada explícita para separar papel, ferramenta e 
 | [`docs/Arquitetura`](docs/Arquitetura/README.md) | Contexto técnico, componentes, integrações, atributos de qualidade e decisões arquiteturais. |
 | [`docs/Padroes`](docs/Padroes/README.md) | Convenções técnicas, visuais e de processo que devem ser repetidas e verificadas. |
 | [`docs/RegrasNegocio`](docs/RegrasNegocio/README.md) | Regras e invariantes do domínio, separados de detalhes de implementação. |
-| [`docs/Features`](docs/Features/README.md) | Especificações das mudanças planejadas ou executadas, com escopo e critérios de aceite. |
+| [`docs/Features`](docs/Features/README.md) | Especificações das mudanças planejadas ou executadas no projeto consumidor, com escopo e critérios de aceite. |
 | [`docs/Revisoes`](docs/Revisoes/README.md) | Pareceres de revisão que precisam ser preservados como evidência ou histórico. |
 | [`docs/Samples`](docs/Samples/FEATURE_EXEMPLO.md) | Exemplos preenchidos que demonstram como usar os templates sem definir regras reais. |
 
@@ -163,6 +170,8 @@ A versão atual adiciona uma camada explícita para separar papel, ferramenta e 
 | Template | Artefato gerado |
 |---|---|
 | [`TEMPLATE_FEATURE`](docs/AI/Templates/TEMPLATE_FEATURE.md) | Feature com contexto, escopo, requisitos, aceite, riscos e gate de conclusão. |
+| [`TEMPLATE_LIMITACOES_EXECUCAO_FEATURES`](docs/AI/Templates/TEMPLATE_LIMITACOES_EXECUCAO_FEATURES.md) | Registro de limitações locais que devem ser lidas antes da execução de features. |
+| [`TEMPLATE_DOCUMENTACAO_INICIAL_PROJETO`](docs/AI/Templates/TEMPLATE_DOCUMENTACAO_INICIAL_PROJETO.md) | Contrato para documentação inicial com informação informada, inferida e pendente. |
 | [`TEMPLATE_PLANO_IMPLEMENTACAO`](docs/AI/Templates/TEMPLATE_PLANO_IMPLEMENTACAO.md) | Plano incremental ligado aos critérios e às validações. |
 | [`TEMPLATE_CHECKLIST_IMPLEMENTACAO`](docs/AI/Templates/TEMPLATE_CHECKLIST_IMPLEMENTACAO.md) | Checklist operacional para execução e entrega. |
 | [`TEMPLATE_REVISAO`](docs/AI/Templates/TEMPLATE_REVISAO.md) | Parecer de revisão com severidade, evidência, impacto e recomendação. |
@@ -252,7 +261,7 @@ A feature is not complete merely because the code compiles. Review, applicable v
 Adopt ADF in this order:
 
 1. **Prepare local decisions:** before treating ADF as ready for use, define which AIs will be used, which free OpenCode models are available, who maintains the documentation, and which files must be filled in the adopting project.
-2. [Use the guided installer](Installer/INSTALADOR_ADF.md): give this file to the reader AI so it can ask the required questions, validate answers, copy the ADF skeleton, and fill `CONFIGURACAO_IAS.md` and `ADF_ADOCAO.md`.
+2. [Use the guided installer](Installer/INSTALADOR_ADF.md): give this file to the reader AI so it can ask the required questions, validate answers, copy the ADF skeleton, fill `CONFIGURACAO_IAS.md` and `ADF_ADOCAO.md`, and, when authorized, register local limitations and initial project documentation.
 3. [Install ADF](Installer/FEATURE_INSTALAR_ADF.md): copy the base structure and record the installed version.
 4. [Adapt it to the project](Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md): define ownership, conventions, AI routing, and required extensions without silently modifying Core.
 5. [Populate documentation](Installer/FEATURE_POPULAR_DOCUMENTACAO_ADF.md): record the existing vision, glossary, architecture, standards, and rules.
@@ -268,6 +277,7 @@ ADF installs the skeleton, but each adopting project must fill local decisions b
 |---|---|---|
 | [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) | Main Thinking AI, Main Dev AI, OpenCode requirement, available free models, best use for each model, and fallback route. | Allows the Thinking AI to know when to execute, when to delegate heavy code, and when to use OpenCode without guessing. |
 | [`docs/Projeto/ADF_ADOCAO.md`](docs/Projeto/ADF_ADOCAO.md) | ADF owner, review cadence, accepted deviations, tools used, and local adoption decisions. | Records how the framework was adapted to the project without modifying Core. |
+| `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` | Local limitations provided by the user, when created during installation. | Prevents AIs from changing sensitive areas without agreed authorization or validation. |
 | [`docs/Projeto/README.md`](docs/Projeto/README.md) | Vision, scope, glossary, stakeholders, and adopting project status. | Gives product context so the AI understands intent and boundaries. |
 | [`docs/Arquitetura/README.md`](docs/Arquitetura/README.md) | Components, integrations, decisions, technical risks, and quality attributes. | Helps decide whether a change is simple, structural, or should go to the Main Dev AI. |
 | [`docs/Padroes/README.md`](docs/Padroes/README.md) | Code, test, layout, commit, review, and organization conventions. | Keeps deliveries consistent across people, Main Dev AI, and OpenCode. |
@@ -295,7 +305,13 @@ The current version adds an explicit layer for separating role, tool, and execut
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Rules for changing ADF without introducing domain or technology dependencies. |
 | [`LICENSE`](LICENSE) | MIT License terms for use and distribution. |
 
-#### Documentation directories
+#### `ADF`: internal framework evolution
+
+| Path | Purpose |
+|---|---|
+| [`ADF/Features`](ADF/Features/README.md) | Features and proposals for evolving the ADF framework itself. It should not be copied to adopting projects during normal installation. |
+
+#### `docs`: adopting project documentation skeleton
 
 | Path | Purpose |
 |---|---|
@@ -308,7 +324,7 @@ The current version adds an explicit layer for separating role, tool, and execut
 | [`docs/Arquitetura`](docs/Arquitetura/README.md) | Technical context, components, integrations, quality attributes, and architectural decisions. |
 | [`docs/Padroes`](docs/Padroes/README.md) | Recurring and verifiable technical, visual, and process conventions. |
 | [`docs/RegrasNegocio`](docs/RegrasNegocio/README.md) | Domain rules and invariants kept separate from implementation details. |
-| [`docs/Features`](docs/Features/README.md) | Planned or completed change specifications with scope and acceptance criteria. |
+| [`docs/Features`](docs/Features/README.md) | Planned or completed change specifications for the adopting project, with scope and acceptance criteria. |
 | [`docs/Revisoes`](docs/Revisoes/README.md) | Review reports preserved as evidence or historical records. |
 | [`docs/Samples`](docs/Samples/FEATURE_EXEMPLO.md) | Filled examples showing template usage without defining real project rules. |
 
@@ -348,6 +364,8 @@ The current version adds an explicit layer for separating role, tool, and execut
 | Template | Generated artifact |
 |---|---|
 | [`TEMPLATE_FEATURE`](docs/AI/Templates/TEMPLATE_FEATURE.md) | Feature containing context, scope, requirements, acceptance criteria, risks, and completion gate. |
+| [`TEMPLATE_LIMITACOES_EXECUCAO_FEATURES`](docs/AI/Templates/TEMPLATE_LIMITACOES_EXECUCAO_FEATURES.md) | Local limitations that must be read before feature execution. |
+| [`TEMPLATE_DOCUMENTACAO_INICIAL_PROJETO`](docs/AI/Templates/TEMPLATE_DOCUMENTACAO_INICIAL_PROJETO.md) | Initial documentation contract with user-provided, inferred, and pending information. |
 | [`TEMPLATE_PLANO_IMPLEMENTACAO`](docs/AI/Templates/TEMPLATE_PLANO_IMPLEMENTACAO.md) | Incremental plan mapped to acceptance criteria and validation. |
 | [`TEMPLATE_CHECKLIST_IMPLEMENTACAO`](docs/AI/Templates/TEMPLATE_CHECKLIST_IMPLEMENTACAO.md) | Operational checklist for implementation and delivery. |
 | [`TEMPLATE_REVISAO`](docs/AI/Templates/TEMPLATE_REVISAO.md) | Review report containing severity, evidence, impact, and recommendation. |

@@ -5,11 +5,11 @@
 | Diretório | Conteúdo canônico |
 |---|---|
 | `AI` | processo, papéis, skills, prompts e templates |
-| `Projeto` | visão, glossário, status, roadmap e histórico |
+| `Projeto` | visão, glossário, status, roadmap, limitações locais e histórico |
 | `Arquitetura` | estrutura, decisões, integrações e atributos de qualidade |
 | `Padroes` | convenções recorrentes e verificáveis |
 | `RegrasNegocio` | invariantes e políticas do domínio |
-| `Features` | mudanças com escopo e aceite definidos |
+| `Features` | mudanças do projeto consumidor com escopo e aceite definidos |
 | `Revisoes` | pareceres e evidências que precisam ser preservados |
 
 ## Regras de manutenção
