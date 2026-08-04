@@ -62,6 +62,14 @@ Os principais benefícios são:
 
 Uma feature não está concluída somente porque o código compila. Revisão, validações aplicáveis e avaliação documental fazem parte da entrega.
 
+### Escolha o caminho correto
+
+| Cenario | Use | Resultado |
+|---|---|---|
+| Projeto ainda nao tem ADF | [`Installer/INSTALADOR_ADF.md`](Installer/INSTALADOR_ADF.md) | Instala o esqueleto documental e coleta configuracoes iniciais. |
+| Projeto ja tem ADF instalado | [`Installer/UPDATE.md`](Installer/UPDATE.md) | Atualiza arquivos do framework preservando conteudo local do cliente. |
+| Mudanca no proprio framework ADF | [`ADF/Features`](ADF/Features/README.md) | Registra e acompanha evolucoes internas do ADF fora do esqueleto do cliente. |
+
 ### Como começar
 
 Para adotar o ADF em outro projeto, siga esta ordem:
@@ -262,6 +270,14 @@ Key benefits include:
 8. **Complete:** report changed files, validation, reviewed documentation, and remaining issues.
 
 A feature is not complete merely because the code compiles. Review, applicable validation, and documentation assessment are part of delivery.
+
+### Choose the right path
+
+| Scenario | Use | Result |
+|---|---|---|
+| Project does not have ADF yet | [`Installer/INSTALADOR_ADF.md`](Installer/INSTALADOR_ADF.md) | Installs the documentation skeleton and collects initial settings. |
+| Project already has ADF installed | [`Installer/UPDATE.md`](Installer/UPDATE.md) | Updates framework files while preserving local client content. |
+| Change to the ADF framework itself | [`ADF/Features`](ADF/Features/README.md) | Records and tracks internal ADF evolution outside the client skeleton. |
 
 ### Getting started
 
