@@ -14,6 +14,8 @@ Skills/Prompts ─> modo de execução
 
 Use links relativos. Evite duplicação: cada fato tem uma origem autoritativa e os demais documentos apontam para ela.
 
+O [contrato do ADF](ADF_FRAMEWORK.md#contrato-de-instruções-para-agentes) define `docs/` como fonte canônica. Arquivos de instrução de agentes, quando o projeto consumidor os adotar, são adaptadores e devem apontar para essas fontes.
+
 Consulte também o [guia de organização](GUIA_ORGANIZACAO_DOCUMENTACAO.md).
 
 ## Catálogo

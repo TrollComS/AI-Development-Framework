@@ -97,7 +97,7 @@ O ADF instala o esqueleto, mas cada projeto consumidor precisa preencher decisõ
 
 | Arquivo | O que preencher | Por que importa |
 |---|---|---|
-| [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) | IA Pensante principal, IA Dev Principal, exigência do OpenCode, modelos gratuitos disponíveis, melhor uso de cada modelo e rota alternativa. | Permite que a IA Pensante saiba quando executar, quando delegar para código pesado e quando usar OpenCode sem depender de suposição. |
+| [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) | Ferramentas habilitadas, IA Pensante principal, IA Dev Principal, OpenCode quando aplicável, modelos locais, melhor uso e rota alternativa. | Permite que a IA Pensante saiba quando executar ou delegar sem depender de suposição. |
 | [`docs/Projeto/ADF_ADOCAO.md`](docs/Projeto/ADF_ADOCAO.md) | Responsável pelo ADF, cadência de revisão, desvios aceitos, ferramentas usadas e decisões locais de adoção. | Registra como o framework foi adaptado ao projeto sem modificar o Core. |
 | `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` | Limitações locais informadas pelo usuário, quando criadas durante a instalação. | Impede que IAs avancem em áreas sensíveis sem autorização ou validação combinada. |
 | [`docs/Projeto/README.md`](docs/Projeto/README.md) | Visão, escopo, glossário, stakeholders e estado do projeto consumidor. | Dá contexto de produto para a IA entender intenção e limites. |
@@ -109,10 +109,10 @@ O ADF instala o esqueleto, mas cada projeto consumidor precisa preencher decisõ
 
 A versão atual adiciona uma camada explícita para separar papel, ferramenta e rota de execução:
 
-- [`docs/AI/Core/ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) define a regra geral para escolher entre IA Pensante, IA Dev Principal e OpenCode.
-- [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) é preenchido pelo usuário em cada projeto com as ferramentas reais e os modelos gratuitos do OpenCode.
+- [`docs/AI/Core/ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) define a regra geral para escolher entre as rotas habilitadas pelo projeto.
+- [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) é preenchido pelo usuário em cada projeto com as ferramentas reais e modelos locais quando aplicável.
 - A IA Pensante deve ler essa configuração antes de planejar uma feature e declarar a rota escolhida.
-- O OpenCode deve ser usado apenas com modelos gratuitos declarados pelo usuário.
+- O OpenCode, quando habilitado, deve usar somente modelos declarados pelo usuário.
 - Mudanças grandes, estruturais, sensíveis ou de alto risco devem ir para a IA Dev Principal.
 
 ### Estrutura do repositório
@@ -308,7 +308,7 @@ ADF installs the skeleton, but each adopting project must fill local decisions b
 
 | File | What to fill in | Why it matters |
 |---|---|---|
-| [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) | Main Thinking AI, Main Dev AI, OpenCode requirement, available free models, best use for each model, and fallback route. | Allows the Thinking AI to know when to execute, when to delegate heavy code, and when to use OpenCode without guessing. |
+| [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) | Enabled tools, Main Thinking AI, Main Dev AI, OpenCode when applicable, local models, best use, and fallback route. | Allows the Thinking AI to know when to execute or delegate without guessing. |
 | [`docs/Projeto/ADF_ADOCAO.md`](docs/Projeto/ADF_ADOCAO.md) | ADF owner, review cadence, accepted deviations, tools used, and local adoption decisions. | Records how the framework was adapted to the project without modifying Core. |
 | `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` | Local limitations provided by the user, when created during installation. | Prevents AIs from changing sensitive areas without agreed authorization or validation. |
 | [`docs/Projeto/README.md`](docs/Projeto/README.md) | Vision, scope, glossary, stakeholders, and adopting project status. | Gives product context so the AI understands intent and boundaries. |
@@ -320,10 +320,10 @@ ADF installs the skeleton, but each adopting project must fill local decisions b
 
 The current version adds an explicit layer for separating role, tool, and execution route:
 
-- [`docs/AI/Core/ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) defines the general rule for choosing between Thinking AI, Main Dev AI, and OpenCode.
-- [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) is filled by the user in each project with real tools and free OpenCode models.
+- [`docs/AI/Core/ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) defines the general rule for choosing among project-enabled routes.
+- [`docs/Projeto/CONFIGURACAO_IAS.md`](docs/Projeto/CONFIGURACAO_IAS.md) is filled by the user in each project with real tools and local models when applicable.
 - The Thinking AI must read this configuration before planning a feature and declare the chosen route.
-- OpenCode must be used only with free models declared by the user.
+- OpenCode, when enabled, must use only models declared by the user.
 - Large, structural, sensitive, or high-risk changes should go to the Main Dev AI.
 
 ### Repository structure

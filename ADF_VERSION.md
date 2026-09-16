@@ -1,6 +1,6 @@
 # Versão do ADF
 
-**Versão:** 1.4.0
+**Versão:** 1.5.0
 
 **Esquema:** Semantic Versioning 2.0.0
 
@@ -9,6 +9,10 @@
 - **PATCH:** correção compatível.
 
 O projeto consumidor deve registrar a versão instalada e suas adaptações.
+
+## Compatibilidade da versão 1.5
+
+A versão 1.5 formaliza o contrato de instruções para agentes: `docs/` passa a ser a fonte canônica declarada, `AGENTS.md` passa a ser o ponto de entrada universal recomendado quando adotado, e o preflight passa a orientar a leitura mínima. A política de granularidade de features também é explícita e configurável por projeto. Não há movimentação de diretórios; projetos existentes podem adotar as novas seções e manter suas ferramentas atuais.
 
 ## Compatibilidade da versão 1.4
 

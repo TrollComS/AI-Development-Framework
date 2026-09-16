@@ -10,8 +10,8 @@ Esse arquivo é a fonte canônica para:
 
 - IA Pensante principal usada pelo usuário;
 - IA de Dev principal para código pesado;
-- obrigatoriedade e forma de uso do OpenCode;
-- modelos gratuitos disponíveis no OpenCode;
+- ferramentas opcionais habilitadas pelo projeto e sua forma de uso;
+- modelos disponíveis em ferramentas locais, quando aplicável;
 - critérios para decidir quando delegar para cada opção.
 
 O Core define o processo. A configuração do projeto define as escolhas concretas.
@@ -28,22 +28,21 @@ A IA Pensante não deve assumir que uma tarefa será implementada por ela quando
 
 Responsável por implementações grandes, mudanças estruturais, refatorações amplas, features com múltiplos módulos, migrações, alterações de arquitetura e tarefas com alto risco de regressão.
 
-### IA OpenCode
+### IA OpenCode, quando habilitada
 
 Responsável por tarefas que possam ser executadas no ambiente local via OpenCode usando modelos gratuitos configurados pelo usuário.
 
-O OpenCode deve ser tratado como requisito operacional do projeto quando `docs/Projeto/CONFIGURACAO_IAS.md` marcar seu uso como obrigatório.
+OpenCode é uma opção do projeto consumidor. Quando `docs/Projeto/CONFIGURACAO_IAS.md` marcar seu uso como obrigatório, ele deve ser tratado como requisito operacional; quando estiver desabilitado ou ausente, a matriz local deve indicar a rota aplicável.
 
 ## Regra de decisão
 
 Antes de iniciar uma feature, a IA Pensante deve:
 
-1. Ler `docs/INDICE_DOCUMENTACAO.md`.
-2. Ler `docs/Projeto/CONFIGURACAO_IAS.md`.
-3. Identificar papel, skill e contexto mínimo.
-4. Classificar a tarefa por risco, tamanho e tipo de mudança.
-5. Escolher uma rota: IA Pensante, IA Dev Principal ou OpenCode.
-6. Registrar no plano qual rota será usada e por quê.
+1. Executar o preflight definido em `docs/AI/Core/ADF_FRAMEWORK.md`.
+2. Identificar papel, skill e contexto mínimo.
+3. Classificar a tarefa por risco, tamanho e tipo de mudança.
+4. Escolher uma rota declarada na configuração local.
+5. Registrar no plano qual rota será usada e por quê.
 
 ## Quando usar a IA Dev Principal
 
@@ -58,7 +57,7 @@ Use a IA Dev Principal quando houver pelo menos um destes sinais:
 
 ## Quando usar OpenCode
 
-Use OpenCode quando a configuração local indicar um modelo gratuito adequado e a tarefa for compatível com execução local, por exemplo:
+Use OpenCode somente quando a configuração local o habilitar, indicar um modelo adequado e a tarefa for compatível com execução local, por exemplo:
 
 - alteração pequena ou média com escopo bem definido;
 - geração de código repetitivo;

@@ -14,6 +14,7 @@ Este arquivo registra como o ADF foi adaptado ao projeto consumidor. Não dupliq
 - **Padrão de identificação de features:** A definir
 - **Diretórios do projeto mapeados para o ADF:** A definir
 - **Ferramentas obrigatórias:** A definir
+- **Política local de granularidade das entregas:** A definir
 
 ## Configuração de IAs
 
@@ -21,7 +22,8 @@ A configuração operacional de IAs fica em `docs/Projeto/CONFIGURACAO_IAS.md`.
 
 Registre aqui somente decisões de adoção relacionadas, por exemplo:
 
-- motivo para exigir OpenCode;
+- ferramentas ou adaptadores de agentes habilitados e seu motivo;
+- motivo para exigir OpenCode, quando aplicável;
 - política de uso gratuito;
 - responsável por revisar modelos disponíveis;
 - exceções aprovadas para rotas de execução.

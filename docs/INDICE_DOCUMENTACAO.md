@@ -1,8 +1,8 @@
 # Índice da documentação
 
-Este é o ponto único de entrada do ADF. Comece aqui e carregue somente os documentos necessários à tarefa. Os mapas são catálogos, não roteiros de leitura.
+Este é o ponto único de entrada documental do ADF. Depois de ler a instrução de entrada aplicável ao agente, quando existir, comece aqui e carregue somente os documentos necessários à tarefa. Os mapas são catálogos, não roteiros de leitura.
 
-Antes de planejar ou executar uma mudança, consulte `docs/Projeto/CONFIGURACAO_IAS.md`, verifique se existe `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` e aplique o [Roteamento de IAs](AI/Core/ROTEAMENTO_IAS.md).
+Antes de analisar, planejar, implementar, corrigir ou revisar, aplique o [preflight do contrato do ADF](AI/Core/ADF_FRAMEWORK.md#preflight-obrigatório), consulte `docs/Projeto/CONFIGURACAO_IAS.md`, verifique se existe `docs/Projeto/LIMITACOES_EXECUCAO_FEATURES.md` e aplique o [Roteamento de IAs](AI/Core/ROTEAMENTO_IAS.md).
 
 ## Leitura mínima por papel
 
@@ -58,7 +58,7 @@ Antes de planejar ou executar uma mudança, consulte `docs/Projeto/CONFIGURACAO_
 
 - `Projeto`: visão, glossário, status, roadmap, configuração de IAs e histórico.
 - `Projeto/ADF_ADOCAO.md`: responsáveis, cadência, convenções locais, adaptações aceitas e pendências de implantação.
-- `Projeto/CONFIGURACAO_IAS.md`: IA Pensante, IA Dev Principal, OpenCode, modelos gratuitos e matriz de roteamento.
+- `Projeto/CONFIGURACAO_IAS.md`: ferramentas habilitadas, IA Pensante, IA Dev Principal, OpenCode quando aplicável, modelos locais e matriz de roteamento.
 - `Projeto/LIMITACOES_EXECUCAO_FEATURES.md`: limitações locais que devem ser lidas antes de planejar ou executar features, quando existir.
 - `Arquitetura`: contexto, componentes, integrações e ADRs.
 - `Arquitetura/MAPA_PROJETOS.md`: mapa inicial de soluções, projetos, pacotes e módulos, quando gerado.

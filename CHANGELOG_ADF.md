@@ -1,5 +1,21 @@
 # Changelog do ADF
 
+## 1.5.0 — 2026-09-16
+
+### Alterados
+
+- `docs/AI/Core/ADF_FRAMEWORK.md`: adicionado contrato de instruções para agentes, preflight, precedência e política de granularidade.
+- Índice, fluxo, papéis, roteamento, checklist, mapa documental e configuração local de IAs: alinhados ao novo contrato.
+- `docs/Projeto/CONFIGURACAO_IAS.md`: OpenCode passou a ser uma opção do projeto consumidor, em vez de uma premissa do esqueleto ADF.
+- Versão do ADF: atualizada para `1.5.0` como capacidade compatível nova.
+
+### Benefícios
+
+- Projetos consumidores passam a ter uma ordem única e verificável para iniciar tarefas com agentes.
+- O ADF reduz duplicação entre documentação canônica e futuros adaptadores de ferramentas.
+- Iniciativas grandes podem ser divididas de forma consistente sem bloquear etapas inseparáveis por segurança, integridade, migração ou compatibilidade.
+- A adoção do ADF continua independente de fornecedor, modelo, plano pago ou ferramenta local.
+
 ## 1.4.0 — 2026-08-04
 
 ### Criados

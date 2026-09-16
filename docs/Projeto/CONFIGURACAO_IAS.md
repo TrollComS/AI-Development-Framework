@@ -4,8 +4,9 @@ Este arquivo deve ser preenchido ao adotar o ADF. Ele é lido pela IA Pensante a
 
 ## Estado
 
-- **OpenCode obrigatório:** Sim
-- **Uso permitido:** apenas modelos gratuitos configurados localmente
+- **Ferramentas habilitadas no projeto:** A definir
+- **OpenCode habilitado:** A definir
+- **Uso permitido de ferramentas locais:** A definir
 - **Responsável por manter esta configuração:** A definir
 - **Última revisão:** A definir
 
@@ -23,16 +24,16 @@ Este arquivo deve ser preenchido ao adotar o ADF. Ele é lido pela IA Pensante a
 - **Critérios de envio:** múltiplos módulos, muitos arquivos, contrato público, segurança, migração, performance crítica ou incerteza técnica alta.
 - **Rota alternativa se indisponível:** A definir
 
-## OpenCode
+## OpenCode, quando habilitado
 
-- **Instalação exigida na máquina do usuário:** Sim
+- **Instalação exigida na máquina do usuário:** A definir
 - **Comando de verificação:** `opencode --version`
 - **Modo de uso:** gratuito
 - **Rota alternativa se indisponível:** IA Dev Principal
 
 ### Modelos gratuitos disponíveis
 
-Preencha somente modelos que o usuário realmente configurou e pode usar gratuitamente via OpenCode.
+Preencha esta seção somente se o projeto habilitar OpenCode e usar modelos configurados localmente. Caso contrário, registre `Não utilizado neste projeto`.
 
 | Nome local no OpenCode | Melhor uso | Evitar quando | Observações |
 |---|---|---|---|
@@ -45,10 +46,10 @@ Preencha somente modelos que o usuário realmente configurou e pode usar gratuit
 | Tipo de tarefa | Rota preferencial | Condição |
 |---|---|---|
 | Conversa inicial, descoberta de contexto e planejamento | IA Pensante | Sempre iniciar aqui |
-| Feature pequena e localizada | OpenCode | Se houver modelo gratuito adequado |
-| Correção simples de bug | OpenCode | Se reprodução e aceite estiverem claros |
-| Testes ou documentação localizada | OpenCode | Se não envolver decisão de arquitetura |
-| CRUD simples | OpenCode | Se padrões e entidade estiverem claros |
+| Feature pequena e localizada | Rota definida pelo projeto | Se houver ferramenta habilitada adequada |
+| Correção simples de bug | Rota definida pelo projeto | Se reprodução e aceite estiverem claros |
+| Testes ou documentação localizada | Rota definida pelo projeto | Se não envolver decisão de arquitetura |
+| CRUD simples | Rota definida pelo projeto | Se padrões e entidade estiverem claros |
 | Feature grande ou multi-módulo | IA Dev Principal | Quando envolver muitos arquivos ou etapas dependentes |
 | Refatoração ampla | IA Dev Principal | Quando comportamento precisa ser preservado em várias áreas |
 | Arquitetura, segurança, migração ou contrato público | IA Dev Principal | Sempre que houver alto impacto |
@@ -56,11 +57,18 @@ Preencha somente modelos que o usuário realmente configurou e pode usar gratuit
 
 ## Regras para a IA Pensante
 
-1. Começar em `docs/INDICE_DOCUMENTACAO.md`.
+1. Executar o preflight definido em `docs/AI/Core/ADF_FRAMEWORK.md`.
 2. Ler este arquivo antes de decidir quem implementa.
 3. Escolher a skill adequada para a tarefa.
 4. Declarar a rota escolhida no plano.
-5. Usar OpenCode somente com modelos gratuitos declarados neste arquivo.
-6. Se OpenCode estiver indisponível, registrar o impedimento e usar a rota alternativa.
+5. Usar apenas ferramentas e modelos declarados neste arquivo.
+6. Se uma rota estiver indisponível, registrar o impedimento e usar a rota alternativa declarada.
 7. Não enviar segredos, tokens ou dados sensíveis para nenhuma IA.
 8. Não alterar esta configuração sem aprovação humana.
+
+## Diretriz de granularidade das entregas
+
+Use o padrão do ADF: cada feature representa o menor incremento funcional coerente. Registre abaixo somente adaptações locais, exceções aprovadas ou critérios adicionais.
+
+- **Política local de granularidade:** A definir
+- **Exceções aprovadas:** A definir

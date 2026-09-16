@@ -10,7 +10,7 @@ Papéis podem ser exercidos pela mesma ferramenta em momentos distintos, mas sua
 
 ## Ferramentas e roteamento
 
-Papéis não são a mesma coisa que ferramentas. A escolha entre IA Pensante, IA Dev Principal e OpenCode deve seguir [Roteamento de IAs](ROTEAMENTO_IAS.md) e a configuração do projeto consumidor em `docs/Projeto/CONFIGURACAO_IAS.md`.
+Papéis não são a mesma coisa que ferramentas. A escolha entre as rotas habilitadas pelo projeto, incluindo IA Pensante, IA Dev Principal e OpenCode quando aplicável, deve seguir [Roteamento de IAs](ROTEAMENTO_IAS.md) e a configuração do projeto consumidor em `docs/Projeto/CONFIGURACAO_IAS.md`.
 
 ## Limites
 
