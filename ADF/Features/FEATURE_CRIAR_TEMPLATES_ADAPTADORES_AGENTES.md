@@ -1,6 +1,6 @@
 # Feature: Criar templates de adaptadores para agentes
 
-**Estado:** Rascunho
+**Estado:** Concluída
 
 **Responsável:** A definir
 
@@ -54,12 +54,12 @@ O ADF deve oferecer modelos opt-in para os formatos de instrução mais comuns. 
 
 ## Critérios de aceite
 
-- [ ] Dado um projeto que habilita Codex, quando o template universal for aplicado, então existe `AGENTS.md` com links válidos ao ADF.
-- [ ] Dado um projeto que habilita Copilot, quando o template correspondente for aplicado, então existe `.github/copilot-instructions.md` sem duplicação integral de `AGENTS.md`.
-- [ ] Dado conteúdo local fora do bloco gerenciado, quando um template for atualizado futuramente, então a estratégia documental prevê sua preservação.
-- [ ] Dado um projeto que não usa Cursor, Claude ou Gemini, quando os templates forem disponibilizados, então nenhum desses arquivos é exigido.
-- [ ] Dado um monorepo com convenções distintas, quando regras por caminho forem necessárias, então o template explica quando adotá-las.
-- [ ] Dado cada template criado, quando seus links forem verificados, então todos apontam para caminhos existentes no esqueleto instalado.
+- [x] Dado um projeto que habilita Codex, quando o template universal for aplicado, então existe `AGENTS.md` com links válidos ao ADF.
+- [x] Dado um projeto que habilita Copilot, quando o template correspondente for aplicado, então existe `.github/copilot-instructions.md` sem duplicação integral de `AGENTS.md`.
+- [x] Dado conteúdo local fora do bloco gerenciado, quando um template for atualizado futuramente, então a estratégia documental prevê sua preservação.
+- [x] Dado um projeto que não usa Cursor, Claude ou Gemini, quando os templates forem disponibilizados, então nenhum desses arquivos é exigido.
+- [x] Dado um monorepo com convenções distintas, quando regras por caminho forem necessárias, então o template explica quando adotá-las.
+- [x] Dado cada template criado, quando seus links forem verificados, então todos apontam para caminhos existentes no esqueleto instalado.
 
 ## Riscos, dependências e reversão
 
@@ -79,8 +79,8 @@ O ADF deve oferecer modelos opt-in para os formatos de instrução mais comuns. 
 
 ## Checklist de conclusão
 
-- [ ] Templates essenciais criados.
-- [ ] Estratégia de bloco gerenciado e conteúdo local documentada.
-- [ ] Formatos opcionais avaliados e justificados.
-- [ ] Links e referências validados.
-- [ ] Mapas e documentação afetados atualizados.
+- [x] Templates essenciais criados.
+- [x] Estratégia de bloco gerenciado e conteúdo local documentada.
+- [x] Formatos opcionais avaliados e justificados.
+- [x] Links e referências validados.
+- [x] Mapas e documentação afetados atualizados.

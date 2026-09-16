@@ -1,5 +1,24 @@
 # Changelog do ADF
 
+## 1.6.0 — 2026-09-16
+
+### Criados
+
+- `docs/AI/Core/ADAPTADORES_AGENTES.md`: guia de adaptadores, precedência, blocos gerenciados, conteúdo local e regras por caminho.
+- `docs/AI/Templates/TEMPLATE_AGENTS.md`: modelo para o adaptador universal `AGENTS.md`.
+- `docs/AI/Templates/TEMPLATE_COPILOT_INSTRUCTIONS.md`: modelo para `.github/copilot-instructions.md`.
+
+### Alterados
+
+- Índice e mapa documental: adicionadas referências ao guia e aos novos templates.
+- Versão do ADF: atualizada para `1.6.0` como capacidade compatível nova.
+
+### Benefícios
+
+- Projetos consumidores podem ativar instruções para agentes sem duplicar o ADF em múltiplos arquivos.
+- Atualizações futuras podem distinguir conteúdo gerenciado de decisões locais preserváveis.
+- Formatos adicionais permanecem fora do esqueleto até haver suporte seguro no instalador ou atualizador.
+
 ## 1.5.0 — 2026-09-16
 
 ### Alterados

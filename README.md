@@ -159,6 +159,7 @@ A versão atual adiciona uma camada explícita para separar papel, ferramenta e 
 | [`FLUXO_DESENVOLVIMENTO.md`](docs/AI/Core/FLUXO_DESENVOLVIMENTO.md) | Sequência oficial desde a orientação inicial até a conclusão documentada. |
 | [`PAPEIS_DAS_IAS.md`](docs/AI/Core/PAPEIS_DAS_IAS.md) | Responsabilidades e limites das IAs Analista, Arquiteta, Executora, Revisora e Curadora. |
 | [`ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) | Critérios para escolher IA Pensante, IA Dev Principal ou OpenCode conforme risco e tipo de tarefa. |
+| [`ADAPTADORES_AGENTES.md`](docs/AI/Core/ADAPTADORES_AGENTES.md) | Define como adaptar o ADF a arquivos de instrução de agentes sem duplicar fontes canônicas. |
 | [`GUIA_ORGANIZACAO_DOCUMENTACAO.md`](docs/AI/Core/GUIA_ORGANIZACAO_DOCUMENTACAO.md) | Define onde cada informação deve ficar e como evitar duplicidade e documentos gigantes. |
 | [`CHECKLIST_USO_ADF.md`](docs/AI/Core/CHECKLIST_USO_ADF.md) | Verificação compacta para confirmar que contexto, escopo, testes e documentação foram tratados. |
 | [`MAPA_DOCUMENTACAO.md`](docs/AI/Core/MAPA_DOCUMENTACAO.md) | Catálogo dos documentos e explicação das relações entre visão, regras, arquitetura, features e código. |
@@ -196,6 +197,8 @@ A versão atual adiciona uma camada explícita para separar papel, ferramenta e 
 | [`TEMPLATE_PADRAO`](docs/AI/Templates/TEMPLATE_PADRAO.md) | Convenção reutilizável com aplicação, regras, exemplos e verificação. |
 | [`TEMPLATE_REGRA_NEGOCIO`](docs/AI/Templates/TEMPLATE_REGRA_NEGOCIO.md) | Regra de domínio com motivação, exceções, exemplos e rastreabilidade. |
 | [`TEMPLATE_VISAO_PROJETO`](docs/AI/Templates/TEMPLATE_VISAO_PROJETO.md) | Visão do produto com propósito, escopo, stakeholders e indicadores. |
+| [`TEMPLATE_AGENTS`](docs/AI/Templates/TEMPLATE_AGENTS.md) | Adaptador universal opt-in para `AGENTS.md`. |
+| [`TEMPLATE_COPILOT_INSTRUCTIONS`](docs/AI/Templates/TEMPLATE_COPILOT_INSTRUCTIONS.md) | Adaptador opt-in para `.github/copilot-instructions.md`. |
 | [`TEMPLATE_PROMPT_EXECUCAO`](docs/AI/Templates/TEMPLATE_PROMPT_EXECUCAO.md) | Prompt parametrizável para orientar uma IA Executora. |
 | [`TEMPLATE_PROMPT_REVISAO`](docs/AI/Templates/TEMPLATE_PROMPT_REVISAO.md) | Prompt parametrizável para orientar uma IA Revisora. |
 
@@ -370,6 +373,7 @@ The current version adds an explicit layer for separating role, tool, and execut
 | [`FLUXO_DESENVOLVIMENTO.md`](docs/AI/Core/FLUXO_DESENVOLVIMENTO.md) | Official sequence from initial orientation through documented completion. |
 | [`PAPEIS_DAS_IAS.md`](docs/AI/Core/PAPEIS_DAS_IAS.md) | Responsibilities and boundaries for Analyst, Architect, Executor, Reviewer, and Curator roles. |
 | [`ROTEAMENTO_IAS.md`](docs/AI/Core/ROTEAMENTO_IAS.md) | Criteria for choosing Thinking AI, Main Dev AI, or OpenCode based on risk and task type. |
+| [`ADAPTADORES_AGENTES.md`](docs/AI/Core/ADAPTADORES_AGENTES.md) | Defines how to adapt ADF to agent instruction files without duplicating canonical sources. |
 | [`GUIA_ORGANIZACAO_DOCUMENTACAO.md`](docs/AI/Core/GUIA_ORGANIZACAO_DOCUMENTACAO.md) | Defines information ownership and prevents duplication and oversized documents. |
 | [`CHECKLIST_USO_ADF.md`](docs/AI/Core/CHECKLIST_USO_ADF.md) | Compact check ensuring context, scope, tests, and documentation were addressed. |
 | [`MAPA_DOCUMENTACAO.md`](docs/AI/Core/MAPA_DOCUMENTACAO.md) | Document catalog and relationship map across vision, rules, architecture, features, and code. |
@@ -407,6 +411,8 @@ The current version adds an explicit layer for separating role, tool, and execut
 | [`TEMPLATE_PADRAO`](docs/AI/Templates/TEMPLATE_PADRAO.md) | Reusable convention with applicability, rules, examples, and verification. |
 | [`TEMPLATE_REGRA_NEGOCIO`](docs/AI/Templates/TEMPLATE_REGRA_NEGOCIO.md) | Domain rule with rationale, exceptions, examples, and traceability. |
 | [`TEMPLATE_VISAO_PROJETO`](docs/AI/Templates/TEMPLATE_VISAO_PROJETO.md) | Product vision with purpose, scope, stakeholders, and indicators. |
+| [`TEMPLATE_AGENTS`](docs/AI/Templates/TEMPLATE_AGENTS.md) | Opt-in universal adapter for `AGENTS.md`. |
+| [`TEMPLATE_COPILOT_INSTRUCTIONS`](docs/AI/Templates/TEMPLATE_COPILOT_INSTRUCTIONS.md) | Opt-in adapter for `.github/copilot-instructions.md`. |
 | [`TEMPLATE_PROMPT_EXECUCAO`](docs/AI/Templates/TEMPLATE_PROMPT_EXECUCAO.md) | Parameterized prompt for an Executor AI. |
 | [`TEMPLATE_PROMPT_REVISAO`](docs/AI/Templates/TEMPLATE_PROMPT_REVISAO.md) | Parameterized prompt for a Reviewer AI. |
 

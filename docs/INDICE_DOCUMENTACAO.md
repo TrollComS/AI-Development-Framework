@@ -49,6 +49,7 @@ Antes de analisar, planejar, implementar, corrigir ou revisar, aplique o [prefli
 - [Fluxo de desenvolvimento](AI/Core/FLUXO_DESENVOLVIMENTO.md)
 - [Papéis das IAs](AI/Core/PAPEIS_DAS_IAS.md)
 - [Roteamento de IAs](AI/Core/ROTEAMENTO_IAS.md)
+- [Adaptadores de agentes](AI/Core/ADAPTADORES_AGENTES.md)
 - [Guia de organização](AI/Core/GUIA_ORGANIZACAO_DOCUMENTACAO.md)
 - [Checklist de uso](AI/Core/CHECKLIST_USO_ADF.md)
 - [Catálogo documental](AI/Core/MAPA_DOCUMENTACAO.md)
@@ -70,4 +71,4 @@ Antes de analisar, planejar, implementar, corrigir ou revisar, aplique o [prefli
 - `Features`: especificações e evidências das entregas do projeto consumidor.
 - `Revisoes`: pareceres que precisem ser preservados.
 
-Templates, prompts e exemplos ficam em `AI/Templates`, `AI/Prompts` e `Samples`.
+Templates, prompts e exemplos ficam em `AI/Templates`, `AI/Prompts` e `Samples`. Consulte `AI/Core/ADAPTADORES_AGENTES.md` antes de criar arquivos de instrução para ferramentas.

@@ -26,6 +26,7 @@ Consulte também o [guia de organização](GUIA_ORGANIZACAO_DOCUMENTACAO.md).
 - [Fluxo](FLUXO_DESENVOLVIMENTO.md)
 - [Papéis](PAPEIS_DAS_IAS.md)
 - [Roteamento de IAs](ROTEAMENTO_IAS.md)
+- [Adaptadores de agentes](ADAPTADORES_AGENTES.md)
 - [Checklist](CHECKLIST_USO_ADF.md)
 - [Mapa de skills](MAPA_SKILLS.md)
 - [Índice legado](INDICE_DOCUMENTACAO.md)
@@ -49,6 +50,8 @@ Consulte também o [guia de organização](GUIA_ORGANIZACAO_DOCUMENTACAO.md).
 - [Padrão](../Templates/TEMPLATE_PADRAO.md)
 - [Regra de negócio](../Templates/TEMPLATE_REGRA_NEGOCIO.md)
 - [Visão de projeto](../Templates/TEMPLATE_VISAO_PROJETO.md)
+- [Adaptador universal `AGENTS.md`](../Templates/TEMPLATE_AGENTS.md)
+- [Adaptador GitHub Copilot](../Templates/TEMPLATE_COPILOT_INSTRUCTIONS.md)
 
 ### Áreas do projeto consumidor
 

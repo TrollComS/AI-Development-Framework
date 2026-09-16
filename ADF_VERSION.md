@@ -1,6 +1,6 @@
 # Versão do ADF
 
-**Versão:** 1.5.0
+**Versão:** 1.6.0
 
 **Esquema:** Semantic Versioning 2.0.0
 
@@ -9,6 +9,10 @@
 - **PATCH:** correção compatível.
 
 O projeto consumidor deve registrar a versão instalada e suas adaptações.
+
+## Compatibilidade da versão 1.6
+
+A versão 1.6 adiciona templates opt-in para `AGENTS.md` e `.github/copilot-instructions.md`, com blocos gerenciados e locais. Nenhum adaptador é criado automaticamente nesta versão; projetos existentes podem adotar os templates manualmente e preservar instruções locais.
 
 ## Compatibilidade da versão 1.5
 
