@@ -1,6 +1,6 @@
 # Feature: Evoluir instalador para adaptadores de agentes
 
-**Estado:** Rascunho
+**Estado:** Concluída
 
 **Responsável:** A definir
 
@@ -56,12 +56,12 @@ Durante a instalação, o usuário escolhe os agentes e adaptadores que deseja h
 
 ## Critérios de aceite
 
-- [ ] Dado um projeto novo, quando o usuário selecionar Codex e Copilot, então o instalador cria `AGENTS.md` e `.github/copilot-instructions.md` a partir dos templates.
-- [ ] Dado um projeto que não usa OpenCode, quando a instalação terminar, então `CONFIGURACAO_IAS.md` não o declara obrigatório.
-- [ ] Dado um arquivo de instrução existente, quando o instalador for executado, então não há sobrescrita sem autorização explícita.
-- [ ] Dado uma configuração local de build pendente, quando a instalação terminar, então a pendência fica registrada de forma objetiva.
-- [ ] Dado um adaptador não selecionado, quando a instalação terminar, então nenhum arquivo correspondente é criado.
-- [ ] Dado o resumo final, quando o usuário o receber, então consegue identificar os documentos e adaptadores efetivamente criados ou alterados.
+- [x] Dado um projeto novo, quando o usuário selecionar Codex e Copilot, então o instalador cria `AGENTS.md` e `.github/copilot-instructions.md` a partir dos templates.
+- [x] Dado um projeto que não usa OpenCode, quando a instalação terminar, então `CONFIGURACAO_IAS.md` não o declara obrigatório.
+- [x] Dado um arquivo de instrução existente, quando o instalador for executado, então não há sobrescrita sem autorização explícita.
+- [x] Dado uma configuração local de build pendente, quando a instalação terminar, então a pendência fica registrada de forma objetiva.
+- [x] Dado um adaptador não selecionado, quando a instalação terminar, então nenhum arquivo correspondente é criado.
+- [x] Dado o resumo final, quando o usuário o receber, então consegue identificar os documentos e adaptadores efetivamente criados ou alterados.
 
 ## Riscos, dependências e reversão
 
@@ -82,8 +82,8 @@ Durante a instalação, o usuário escolhe os agentes e adaptadores que deseja h
 
 ## Checklist de conclusão
 
-- [ ] Perguntas, validações e registros de instalação atualizados.
-- [ ] Adaptadores selecionados gerados com segurança.
-- [ ] OpenCode tornado decisão de projeto consumidor.
-- [ ] Casos de arquivos existentes validados.
-- [ ] Resumo final e pendências verificáveis implementados.
+- [x] Perguntas, validações e registros de instalação atualizados.
+- [x] Adaptadores selecionados gerados com segurança.
+- [x] OpenCode tornado decisão de projeto consumidor.
+- [x] Casos de arquivos existentes validados.
+- [x] Resumo final e pendências verificáveis implementados.

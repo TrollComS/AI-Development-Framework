@@ -13,8 +13,12 @@ Este arquivo registra como o ADF foi adaptado ao projeto consumidor. Não dupliq
 - **Estados de feature usados:** A definir
 - **Padrão de identificação de features:** A definir
 - **Diretórios do projeto mapeados para o ADF:** A definir
-- **Ferramentas obrigatórias:** A definir
+- **Ferramentas e adaptadores habilitados:** A definir
 - **Política local de granularidade das entregas:** A definir
+- **Comando oficial de build:** A definir
+- **Comando oficial de testes:** A definir
+- **Arquivos ou áreas geradas:** A definir
+- **Áreas que exigem autorização antes de alterar:** A definir
 
 ## Configuração de IAs
 

@@ -1,5 +1,21 @@
 # Changelog do ADF
 
+## 1.7.0 — 2026-09-16
+
+### Alterados
+
+- `Installer/INSTALADOR_ADF.md`: adicionadas perguntas para ferramentas, adaptadores, OpenCode opcional, comandos de build/teste, arquivos gerados e áreas que exigem autorização.
+- Instalador: geração opt-in de `AGENTS.md` e `.github/copilot-instructions.md`, com preservação de conteúdo local e bloqueio seguro para marcadores ausentes ou ambíguos.
+- `docs/Projeto/ADF_ADOCAO.md` e roteiros de instalação/adaptação: ampliados para registrar adaptadores e informações operacionais do preflight.
+- Versão do ADF: atualizada para `1.7.0` como capacidade compatível nova.
+
+### Benefícios
+
+- A instalação inicial passa a configurar apenas ferramentas e adaptadores escolhidos pelo projeto consumidor.
+- OpenCode deixa de bloquear instalações que não o utilizam.
+- Agentes recebem contexto operacional verificável sobre build, testes, arquivos gerados e áreas sensíveis.
+- Arquivos de instrução preexistentes não são sobrescritos silenciosamente.
+
 ## 1.6.0 — 2026-09-16
 
 ### Criados

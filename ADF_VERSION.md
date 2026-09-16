@@ -1,6 +1,6 @@
 # Versão do ADF
 
-**Versão:** 1.6.0
+**Versão:** 1.7.0
 
 **Esquema:** Semantic Versioning 2.0.0
 
@@ -9,6 +9,10 @@
 - **PATCH:** correção compatível.
 
 O projeto consumidor deve registrar a versão instalada e suas adaptações.
+
+## Compatibilidade da versão 1.7
+
+A versão 1.7 evolui a instalação inicial para selecionar adaptadores de agentes, configurar OpenCode somente quando escolhido e registrar comandos de build/teste, áreas geradas e áreas sensíveis. Projetos já instalados não devem executar novamente o instalador inicial; a migração assistida será tratada pelo atualizador do ADF.
 
 ## Compatibilidade da versão 1.6
 
