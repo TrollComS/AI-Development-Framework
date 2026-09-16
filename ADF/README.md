@@ -7,3 +7,4 @@ Nao copie este diretorio para projetos consumidores durante a instalacao comum d
 ## Conteudo
 
 - `Features`: features, propostas e historico de evolucao do framework ADF.
+- [Roadmap de atualizacoes de 2026-09-16](ROADMAP_ATUALIZACOES_2026-09-16.md): linha do tempo, impacto e proximos passos da evolucao de adaptadores para agentes.
