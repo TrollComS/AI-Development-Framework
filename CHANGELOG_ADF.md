@@ -1,5 +1,20 @@
 # Changelog do ADF
 
+## 1.8.0 — 2026-09-16
+
+### Alterados
+
+- `Installer/UPDATE.md`: adicionada classificação e migração assistida de `AGENTS.md` e `.github/copilot-instructions.md`.
+- `Installer/MIGRACOES_ADF.md`: adicionadas migrações das versões 1.5 a 1.8, incluindo contrato, templates, instalador e atualizador.
+- `docs/AI/Core/ADAPTADORES_AGENTES.md`: alinhado aos formatos atualmente suportados pelo atualizador.
+- Versão do ADF: atualizada para `1.8.0` como capacidade compatível nova.
+
+### Benefícios
+
+- Projetos existentes recebem adaptadores sem reexecutar a instalação inicial.
+- Conteúdo local de instruções permanece protegido quando não houver marcadores ADF seguros.
+- O relatório de atualização passa a registrar classificação, preservação, pendências e material necessário para reversão.
+
 ## 1.7.0 — 2026-09-16
 
 ### Alterados

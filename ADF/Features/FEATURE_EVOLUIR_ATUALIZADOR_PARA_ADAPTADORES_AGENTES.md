@@ -1,6 +1,6 @@
 # Feature: Evoluir atualizador para adaptadores de agentes
 
-**Estado:** Rascunho
+**Estado:** Concluída
 
 **Responsável:** A definir
 
@@ -57,12 +57,12 @@ O atualizador deve identificar a nova capacidade, explicar as escolhas disponív
 
 ## Critérios de aceite
 
-- [ ] Dado um projeto com versão anterior, quando o atualizador identificar a migração, então explica os adaptadores disponíveis antes de alterar arquivos.
-- [ ] Dado um `AGENTS.md` com bloco gerenciado reconhecido, quando o usuário aprovar a atualização, então apenas o bloco gerenciado é alterado.
-- [ ] Dado um arquivo de instrução local sem marcadores, quando o atualizador for executado, então ele não é sobrescrito automaticamente.
-- [ ] Dado que o usuário adia a criação de adaptadores, quando a atualização terminar, então a pendência fica registrada de forma rastreável.
-- [ ] Dado uma atualização concluída, quando o relatório final for entregue, então ele discrimina alterações, preservações, versão e reversão.
-- [ ] Dado que a versão pública do ADF foi alterada, quando a feature terminar, então versão, changelog e migrações estão coerentes.
+- [x] Dado um projeto com versão anterior, quando o atualizador identificar a migração, então explica os adaptadores disponíveis antes de alterar arquivos.
+- [x] Dado um `AGENTS.md` com bloco gerenciado reconhecido, quando o usuário aprovar a atualização, então apenas o bloco gerenciado é alterado.
+- [x] Dado um arquivo de instrução local sem marcadores, quando o atualizador for executado, então ele não é sobrescrito automaticamente.
+- [x] Dado que o usuário adia a criação de adaptadores, quando a atualização terminar, então a pendência fica registrada de forma rastreável.
+- [x] Dado uma atualização concluída, quando o relatório final for entregue, então ele discrimina alterações, preservações, versão e reversão.
+- [x] Dado que a versão pública do ADF foi alterada, quando a feature terminar, então versão, changelog e migrações estão coerentes.
 
 ## Riscos, dependências e reversão
 
@@ -83,8 +83,8 @@ O atualizador deve identificar a nova capacidade, explicar as escolhas disponív
 
 ## Checklist de conclusão
 
-- [ ] Migração registrada e atualizador atualizado.
-- [ ] Estratégia segura para arquivos gerenciados, locais e ambíguos validada.
-- [ ] Registros de adoção e configuração preservados.
-- [ ] Versão, changelog e mapas atualizados.
-- [ ] Cenários de reversão e pendências documentados.
+- [x] Migração registrada e atualizador atualizado.
+- [x] Estratégia segura para arquivos gerenciados, locais e ambíguos validada.
+- [x] Registros de adoção e configuração preservados.
+- [x] Versão, changelog e mapas atualizados.
+- [x] Cenários de reversão e pendências documentados.

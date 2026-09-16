@@ -1,6 +1,6 @@
 # Versão do ADF
 
-**Versão:** 1.7.0
+**Versão:** 1.8.0
 
 **Esquema:** Semantic Versioning 2.0.0
 
@@ -9,6 +9,10 @@
 - **PATCH:** correção compatível.
 
 O projeto consumidor deve registrar a versão instalada e suas adaptações.
+
+## Compatibilidade da versão 1.8
+
+A versão 1.8 adiciona a migração assistida de adaptadores para projetos que já usam ADF. O atualizador classifica arquivos de instrução, cria apenas arquivos ausentes autorizados e atualiza somente blocos gerenciados reconhecidos. Arquivos locais ou ambíguos são preservados e registrados como pendência ou proposta manual.
 
 ## Compatibilidade da versão 1.7
 

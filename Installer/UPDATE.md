@@ -24,6 +24,7 @@ Ao final, o projeto consumidor deve:
 - preservar documentos preenchidos em `docs/Projeto`, `docs/Arquitetura`, `docs/Padroes`, `docs/RegrasNegocio`, `docs/Features` e `docs/Revisoes`;
 - registrar a versao atualizada e as pendencias em `docs/Projeto/ADF_ADOCAO.md`;
 - atualizar `ADF_VERSION.md` para a versao do ADF de origem.
+- classificar e tratar adaptadores de agentes sem sobrescrever instrucoes locais.
 
 ## Categorias de arquivos
 
@@ -34,6 +35,7 @@ Classifique cada arquivo antes de atualizar.
 | Core do ADF | `docs/AI/Core/**`, `docs/AI/Skills/**`, `docs/AI/Templates/**`, `docs/AI/Prompts/**`, `Installer/**` | Pode receber atualizacao por copia quando ausente ou por merge assistido quando existir. |
 | Configuracao local do cliente | `docs/Projeto/**`, `docs/Arquitetura/**`, `docs/Padroes/**`, `docs/RegrasNegocio/**`, `docs/Features/**`, `docs/Revisoes/**` | Nunca sobrescrever automaticamente. Acrescentar apenas conteudo ausente e autorizado. |
 | Arquivos de versao | `ADF_VERSION.md`, `CHANGELOG_ADF.md` | Atualizar `ADF_VERSION.md`; copiar ou atualizar `CHANGELOG_ADF.md` se o projeto consumidor mantiver historico do framework. |
+| Adaptadores de agentes | `AGENTS.md`, `.github/copilot-instructions.md` | Nunca sobrescrever como arquivo comum. Aplicar a classificacao e o fluxo de adaptadores desta atualizacao. |
 | Arquivos internos do repositorio ADF | `ADF/**` | Nao copiar para o projeto consumidor. |
 
 ## Dados obrigatorios
@@ -123,6 +125,7 @@ Liste:
 - arquivos novos indicados nas migracoes;
 - arquivos existentes que precisam de revisao;
 - arquivos locais do cliente que nao devem ser sobrescritos;
+- templates de adaptador disponiveis e os arquivos de adaptador presentes;
 - arquivos internos do repositorio ADF que nao devem ser copiados.
 
 Com PowerShell, a IA pode usar:
@@ -133,6 +136,25 @@ Get-ChildItem "PROJECT_ROOT\docs" -Recurse -File
 ```
 
 Nao inclua segredos, binarios, arquivos temporarios ou diretorios de build no inventario.
+
+### Classificacao de adaptadores
+
+Para cada adaptador suportado, compare o arquivo do projeto consumidor com seu template de origem:
+
+| Adaptador | Template de origem | Destino |
+|---|---|---|
+| Universal | `docs/AI/Templates/TEMPLATE_AGENTS.md` | `AGENTS.md` |
+| Copilot | `docs/AI/Templates/TEMPLATE_COPILOT_INSTRUCTIONS.md` | `.github/copilot-instructions.md` |
+
+Classifique cada destino antes de propor qualquer edicao:
+
+- `Ausente`: o destino nao existe.
+- `Compativel`: contem um unico bloco gerenciado e um unico bloco local, e o bloco gerenciado ja corresponde ao template de origem.
+- `Gerenciado`: contem um unico bloco gerenciado e um unico bloco local, mas o bloco gerenciado difere do template de origem.
+- `Local`: existe, mas nao contem marcadores ADF.
+- `Ambiguo`: os marcadores estao ausentes parcialmente, duplicados, invertidos ou nao permitem identificar com seguranca um unico bloco gerenciado e local.
+
+Nao classifique um arquivo local como gerenciado apenas por ter texto parecido com um template.
 
 ### 6. Mostrar plano antes de editar
 
@@ -145,6 +167,8 @@ Plano de atualizacao do ADF:
 - Arquivos novos a copiar: LISTA
 - Arquivos existentes a revisar por merge assistido: LISTA
 - Arquivos locais preservados: LISTA
+- Adaptadores encontrados e classificacao: LISTA
+- Acoes de adaptador propostas: LISTA
 - Arquivos internos do ADF que nao serao copiados: LISTA
 - Pendencias previstas: LISTA
 
@@ -185,7 +209,37 @@ Posso aplicar esse merge? Responda sim ou nao.
 
 Se o usuario responder `nao`, registre pendencia em `docs/Projeto/ADF_ADOCAO.md`.
 
-### 9. Executar etapas novas introduzidas pelo instalador
+### 9. Tratar adaptadores de agentes
+
+Execute esta etapa depois de copiar os templates ausentes e antes de executar etapas novas do instalador.
+
+Mostre os adaptadores disponiveis, sua classificacao e as opcoes permitidas:
+
+| Classificacao | Opcoes permitidas |
+|---|---|
+| Ausente | criar a partir do template ou adiar. |
+| Compativel | manter sem alteracao. |
+| Gerenciado | atualizar somente o bloco gerenciado, manter sem alteracao ou adiar. |
+| Local | preservar, criar proposta manual ou adiar. |
+| Ambiguo | preservar e registrar pendencia, ou criar proposta manual. |
+
+Pergunte uma opcao por adaptador. Nao presuma que o projeto usa Codex, Copilot ou qualquer outra ferramenta.
+
+Para um adaptador `Ausente`, crie o arquivo somente se o usuario escolher `criar`. Para `Copilot`, crie a pasta `.github` somente quando necessario para criar o arquivo selecionado.
+
+Para um adaptador `Gerenciado`, leia o arquivo e pergunte:
+
+```text
+Encontrei CAMINHO com um bloco gerenciado pelo ADF. Posso substituir somente esse bloco pelo conteudo do template atual, preservando o bloco local e todo texto fora dos marcadores? Responda sim ou nao.
+```
+
+Se houver autorizacao, substitua somente o conteudo entre `ADF:BEGIN MANAGED` e `ADF:END MANAGED`. Nunca altere o bloco local nem conteudo fora dos marcadores.
+
+Para adaptadores `Local` ou `Ambiguo`, nunca sobrescreva o arquivo. Se o usuario escolher proposta manual, mostre o bloco gerenciado que poderia ser inserido e aguarde uma autorizacao posterior para qualquer alteracao. Se escolher adiar ou preservar, registre a pendencia ou preservacao.
+
+Antes de alterar qualquer adaptador, registre em um relatorio de atualizacao o caminho, classificacao, acao aprovada e o bloco gerenciado anterior, quando existir. O relatorio pode ficar em `docs/Revisoes/` ou no mecanismo de historico aprovado pelo projeto. Isso permite reversao sem perder instrucao local.
+
+### 10. Executar etapas novas introduzidas pelo instalador
 
 Depois de atualizar ou revisar `Installer/INSTALADOR_ADF.md`, compare a versao antiga e a nova do instalador.
 
@@ -215,7 +269,7 @@ Se uma etapa nova criar ou atualizar documento local do projeto consumidor, siga
 
 Se o usuario responder `nao`, registre as etapas novas como pendencias em `docs/Projeto/ADF_ADOCAO.md`.
 
-### 10. Registrar atualizacao
+### 11. Registrar atualizacao
 
 Atualize `PROJECT_ROOT\docs\Projeto\ADF_ADOCAO.md` sem apagar historico.
 
@@ -233,13 +287,15 @@ Se houver pendencias:
 | Revisar merge pendente do arquivo CAMINHO | RESPONSAVEL | A definir | Pendente |
 ```
 
-### 11. Atualizar versao
+Registre tambem adaptadores criados, atualizados, preservados ou adiados. Nao substitua as escolhas existentes em `CONFIGURACAO_IAS.md` ou `ADF_ADOCAO.md`; acrescente somente campos ausentes ou uma entrada historica depois de mostrar o resumo e receber autorizacao.
+
+### 12. Atualizar versao
 
 Atualize `PROJECT_ROOT\ADF_VERSION.md` para a versao alvo.
 
 Se o projeto consumidor tiver adaptacoes locais nesse arquivo, preserve-as e acrescente a versao nova sem apagar observacoes existentes.
 
-### 12. Validacao final
+### 13. Validacao final
 
 Verifique:
 
@@ -258,6 +314,8 @@ Confirme que:
 - o diretorio `ADF` nao foi copiado para o projeto consumidor;
 - `docs/Features` contem apenas features do projeto consumidor;
 - novas etapas do instalador foram executadas ou registradas como pendencia;
+- adaptadores locais ou ambiguos foram preservados sem sobrescrita;
+- adaptadores gerenciados alterados tiveram somente o bloco gerenciado modificado;
 - pendencias foram registradas quando um merge foi recusado ou incerto;
 - links adicionados apontam para arquivos existentes.
 
@@ -278,6 +336,12 @@ Arquivos atualizados por merge assistido:
 - LISTA
 
 Arquivos preservados sem alteracao:
+- LISTA
+
+Adaptadores criados ou atualizados:
+- LISTA
+
+Adaptadores preservados:
 - LISTA
 
 Pendencias:
@@ -307,6 +371,9 @@ RESPOSTA_OU_AUTORIZACAO_NECESSARIA
 - [ ] Mostrei plano antes de editar.
 - [ ] Copiei somente arquivos ausentes.
 - [ ] Pedi autorizacao antes de alterar arquivos existentes.
+- [ ] Classifiquei adaptadores como ausente, compativel, gerenciado, local ou ambiguo.
+- [ ] Criei ou atualizei adaptadores somente com autorizacao e sem alterar conteudo local.
+- [ ] Registrei adaptadores preservados, adiados e pendencias.
 - [ ] Identifiquei novas etapas introduzidas pelo instalador atualizado.
 - [ ] Executei etapas novas autorizadas ou registrei pendencias.
 - [ ] Preservei documentos locais do projeto consumidor.

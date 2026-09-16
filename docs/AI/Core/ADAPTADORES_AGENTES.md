@@ -17,7 +17,7 @@ Os adaptadores são opt-in. Um projeto pode usar somente `AGENTS.md`, somente o 
 
 ## Formatos avaliados e não incluídos nesta versão
 
-`CLAUDE.md`, `GEMINI.md` e regras `.cursor/rules/*.mdc` têm formatos de instrução conhecidos, mas não recebem templates nesta versão. O ADF só deve oferecer esses formatos quando o instalador ou atualizador puder perguntar pela ferramenta e preservar o conteúdo local com segurança.
+`CLAUDE.md`, `GEMINI.md` e regras `.cursor/rules/*.mdc` têm formatos de instrução conhecidos, mas não recebem templates nesta versão. O instalador e o atualizador suportam somente `AGENTS.md` e Copilot; formatos adicionais só devem ser oferecidos quando tiverem template, seleção explícita e preservação local segura.
 
 Essa decisão evita instalar arquivos que o projeto não usa e mantém a evolução desses formatos na feature de instalador correspondente.
 

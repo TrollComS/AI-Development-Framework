@@ -156,3 +156,83 @@ Esses arquivos nao devem ser copiados para projetos consumidores.
 - Acrescentar ao atualizador a regra para detectar e executar etapas novas introduzidas pelo instalador.
 - Atualizar `ADF_VERSION.md` para `1.4.0`.
 - Registrar no `CHANGELOG_ADF.md` a criacao do fluxo de atualizacao assistida.
+
+## 1.4.0 -> 1.5.0
+
+### Arquivos a revisar por merge assistido
+
+- `ADF_VERSION.md`
+- `CHANGELOG_ADF.md`
+- `README.md`
+- `docs/INDICE_DOCUMENTACAO.md`
+- `docs/AI/Core/ADF_FRAMEWORK.md`
+- `docs/AI/Core/FLUXO_DESENVOLVIMENTO.md`
+- `docs/AI/Core/ROTEAMENTO_IAS.md`
+- `docs/AI/Core/PAPEIS_DAS_IAS.md`
+- `docs/AI/Core/CHECKLIST_USO_ADF.md`
+- `docs/AI/Core/MAPA_DOCUMENTACAO.md`
+- `docs/Projeto/CONFIGURACAO_IAS.md`
+- `docs/Projeto/ADF_ADOCAO.md`
+
+### Regra de migracao
+
+- Acrescentar o contrato de instrucoes, preflight e politica de granularidade sem substituir convencoes locais.
+- Tratar OpenCode como opcao local; preservar a configuracao atual quando o projeto ja o utiliza.
+- Nao criar arquivos de adaptador nesta etapa. Eles passam a ser opcionais na versao seguinte.
+
+## 1.5.0 -> 1.6.0
+
+### Novos arquivos principais
+
+- `docs/AI/Core/ADAPTADORES_AGENTES.md`
+- `docs/AI/Templates/TEMPLATE_AGENTS.md`
+- `docs/AI/Templates/TEMPLATE_COPILOT_INSTRUCTIONS.md`
+
+### Arquivos a revisar por merge assistido
+
+- `ADF_VERSION.md`
+- `CHANGELOG_ADF.md`
+- `README.md`
+- `docs/INDICE_DOCUMENTACAO.md`
+- `docs/AI/Core/MAPA_DOCUMENTACAO.md`
+
+### Regra de migracao
+
+- Copiar o guia e os templates quando ausentes.
+- Mostrar os adaptadores disponiveis, mas nao criar `AGENTS.md` nem `.github/copilot-instructions.md` sem decisao explicita do usuario.
+- Arquivos de instrucoes existentes sao conteudo local ate que uma classificacao segura identifique marcadores ADF validos.
+
+## 1.6.0 -> 1.7.0
+
+### Arquivos a revisar por merge assistido
+
+- `ADF_VERSION.md`
+- `CHANGELOG_ADF.md`
+- `Installer/INSTALADOR_ADF.md`
+- `Installer/FEATURE_INSTALAR_ADF.md`
+- `Installer/FEATURE_ADAPTAR_ADF_AO_PROJETO.md`
+- `docs/Projeto/ADF_ADOCAO.md`
+
+### Regra de migracao
+
+- Apresentar as novas perguntas do instalador como etapas opcionais de atualizacao; nao executar novamente a instalacao inicial.
+- Oferecer registrar ferramentas, adaptadores, comandos de build/teste, arquivos gerados e areas sensiveis em documentos locais existentes somente mediante autorizacao.
+- Se a informacao nao estiver disponivel, registrar pendencia objetiva em vez de inventar valores.
+
+## 1.7.0 -> 1.8.0
+
+### Arquivos a revisar por merge assistido
+
+- `ADF_VERSION.md`
+- `CHANGELOG_ADF.md`
+- `Installer/UPDATE.md`
+- `Installer/MIGRACOES_ADF.md`
+- `docs/AI/Core/ADAPTADORES_AGENTES.md`
+
+### Regra de migracao
+
+- Atualizar o roteiro do atualizador antes de tratar adaptadores existentes.
+- Classificar `AGENTS.md` e `.github/copilot-instructions.md` como ausente, compativel, gerenciado, local ou ambiguo.
+- Criar arquivo ausente somente com escolha explicita; atualizar arquivo gerenciado somente dentro do bloco ADF e com confirmacao.
+- Preservar arquivos locais ou ambiguos e registrar proposta manual ou pendencia quando solicitado.
+- Registrar no relatorio de atualizacao o bloco gerenciado anterior para permitir reversao.
